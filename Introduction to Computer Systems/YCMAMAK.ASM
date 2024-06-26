@@ -1,0 +1,3001 @@
+.MODEL SMALL
+.STACK 100
+.DATA
+ USERID    LABEL   BYTE
+ MAX       DB      20
+ ACT       DB      0
+ IID2      DB      6 DUP (?)
+
+ PASSWORD  LABEL   BYTE
+ MAX2      DB      15
+ ACT2      DB      0
+ IPWD      DB      15 DUP (?)
+
+ TTQTY     LABEL   BYTE
+ MAX3      DB      4
+ ACT3      DB      0
+ IQTY1     DB      4 DUP (?)
+
+ MLQTY     LABEL   BYTE
+ MAX4      DB      4
+ ACT4      DB      0
+ IQTY2     DB      4 DUP (?)
+
+ KPQTY     LABEL   BYTE
+ MAX5      DB      4
+ ACT5      DB      0
+ IQTY3     DB      4 DUP (?)
+
+ ASQTY     LABEL   BYTE
+ MAX8      DB      4
+ ACT8      DB      0
+ IQTY6     DB      4 DUP (?)
+
+ IPQTY     LABEL   BYTE
+ MAX6      DB      4
+ ACT6      DB      0
+ IQTY4     DB      4 DUP (?)
+
+ CCQTY     LABEL   BYTE
+ MAX7      DB      4
+ ACT7      DB      0
+ IQTY5     DB      4 DUP (?)
+
+ PYMT      LABEL   BYTE
+ MAX13     DB      4
+ ACT13     DB      0
+ IPYMT     DB      4 DUP (0)
+
+;--------------------HOMEPAGE-----------------------
+ MDDDMENU  DB           "       ###############################################"
+           DB     13,10,"       |NO.| MAIN DISHES         | PRICE(RM) | STOCK |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"       | 1.| Roti canai          |   1.00    |  999+ |"
+           DB     13,10,"       | 2.| Nasi lemak          |   2.00    |  999+ |"
+           DB     13,10,"       | 3.| Mee goreng          |   2.00    |  999+ |"
+           DB     13,10,"       | 4.| Nasi goreng         |   4.00    |  999+ |"
+           DB     13,10,"       | 5.| Ayam goreng         |   5.00    |  999+ |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"       |NO.| DRINKS              | PRICE(RM) | STOCK |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"       | 1.| Teh tarik           |   2.00    |  999+ |"
+           DB     13,10,"       | 2.| Milo                |   2.00    |  999+ |"
+           DB     13,10,"       | 3.| Kopi                |   2.00    |  999+ |"
+           DB     13,10,"       | 4.| Air Sirap           |   2.50    |  999+ |"
+           DB     13,10,"       | 5.| 100 plus            |   3.00    |  999+ |"
+           DB     13,10,"       | 6.| Coca-cola           |   3.00    |  999+ |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"       |NO.| DESSERTS            | PRICE(RM) | STOCK |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"       | 1.| Ais kacang          |   3.00    |  999+ |"
+           DB     13,10,"       | 2.| Cendol              |   3.00    |  999+ |"
+           DB     13,10,"       | 3.| Rojak               |   6.00    |  999+ |"
+           DB     13,10,"       ###############################################$"
+ PPRESS    DB     13,10,"              Press any key to return homepage!$"
+
+;---------------------SIGN UP-----------------------
+ CHAR      DB      30 DUP(205)
+ WLC       DB      13,10,"         W E L C O M E        "
+           DB      13,10,13,10, "              T O             "
+           DB      13,10,13,10, "    Y U M C H A  M A M A K !   $"
+ HOME      DB      13,10,13,10,"         1. SIGN UP     "
+           DB      13,10,"         2. LOG IN     "
+           DB      13,10,"         3. MENU      "
+           DB      13,10,"         4. SHUT DOWN     $"
+ MSG1      DB      13,10,13,10,"ENTER YOUR CHOICE (1-4) > $"
+
+ MSG2      DB      "   ############################"
+           DB      13,10,"   |        - SIGN UP -       |"
+           DB      13,10,"   ############################$"
+ MSG3      DB      13,10,13,10,"   Please enter User ID"
+           DB      13,10," - Use less than 10 integers"
+           DB      13,10," - Characters can be accepted"
+           DB      13,10," > $"
+ MSG4      DB      13,10,13,10,"   Please enter password"
+           DB      13,10," - Must contain 5 to 8 characters"
+           DB      13,10," - Integers and lowercase alphabets are not accepted"
+           DB      13,10," > $"
+ ERRORMSG1 DB      13,10,13,10,"PLEASE TRY AGAIN.$"
+ ERRORMSG2 DB      13,10,13,10," INVALID PASSWORD OR ID, PLEASE TRY AGAIN." 
+           DB      13,10,"      (SHUT DOWN AFTER 3RD ATTEMPT)$"       
+ MSG5      DB      13,10,13,10,"   SIGN UP SUCCESSFULLY!$"
+ MSG6      DB      13,10," PRESS ANY KEY TO CONTINUE!$"
+ MSG7      DB      13,10,13,10,"THANK YOU FOR USING THIS SYSTEM!$"
+ NL        DB      13,10,"$"
+
+ CHOICE    DB      0
+ COUNT3    DB      0
+
+;---------------------LOGIN-----------------------
+ ID        LABEL   BYTE
+ MAX11      DB      20
+ ACT11      DB      0
+ IID        DB      20 DUP (?)
+
+ PSW       LABEL   BYTE
+ MAX12      DB      15
+ ACT12      DB      0
+ IPSW       DB      15 DUP (?)
+ 
+ LGMENU    DB      "   ############################"
+           DB      13,10,"   |         - LOGIN -        |"
+           DB      13,10,"   ############################$"
+ LGID      DB      13,10,13,10," Please enter User ID  : $"
+ LGPSW     DB      13,10," Please enter Password : $"
+ LGSUS     DB      13,10,13,10," Login sucessful!"
+ PRESS     DB      13,10," Press any key to continue!$"
+ LGWRG     DB      13,10,13,10," Invalid ID or password, please try again."
+           DB      13,10,"      (SHUT DOWN AFTER 3RD ATTEMPT)$"
+ UID       DB      "MON830"
+ UPSW      DB      "YCMAMAK"
+ COUNT     DB      0
+
+;---------------------MAIN MENU-----------------------
+ MMENU     DB "   ################################"
+           DB 13,10,"   |          - MAIN MENU -       |"
+           DB 13,10,"   ################################"
+           DB 13,10,13,10," 1. Main Dishes"
+           DB 13,10,13,10," 2. Drinks"
+           DB 13,10,13,10," 3. Desserts"
+           DB 13,10,13,10," 4. Logout"
+           DB 13,10," ======================================="
+           DB 13,10,13,10," Enter your choice > $" 
+ ERROR     DB 13,10,13,10," Invalid digit or character! Please retype!$"
+ MLOG      DB 13,10," Confirm logout? (Y/y = Yes, N/n = No) > $"
+ MCHOICE   DB 0
+ MCHOICE2  DB ?
+
+;---------------------MAIN DISHES MENU-----------------------
+MDMENU    DB            "       ###############################################"
+           DB      13,10,"       |NO.| MAIN DISHES         | PRICE(RM) | STOCK |"
+           DB      13,10,"       ###############################################"
+           DB      13,10,"       | 1.| Roti canai          |   1.00    |  999+ |"
+           DB      13,10,"       | 2.| Nasi lemak          |   2.00    |  999+ |"
+           DB      13,10,"       | 3.| Mee goreng          |   2.00    |  999+ |"
+           DB      13,10,"       | 4.| Nasi goreng         |   4.00    |  999+ |"
+           DB      13,10,"       | 5.| Ayam goreng         |   5.00    |  999+ |"
+           DB      13,10,"       ###############################################"
+           DB      13,10,"                   6. Return to main menu             " 
+           DB      13,10,"       ###############################################"
+           DB      13,10,13,10,"      Enter your choice  (1 - 6)         > $"
+ MDCHOICE  DB      0
+ QTY       DB      13,10,"      Enter the quantity (up to 99)                                "
+           DB      13,10,"      (For quantity below 10, enter 0 before the number,e.g.:01,02...) > $"
+ ERROR3    DB      13,10,13,10,"      Invalid digit or character! Please retype!$"
+ PRESS2    DB      13,10,"      Press any key to continue!$"
+ OP        DB      13,10,"      Order Price                        > RM $"
+ FLNUM     DB            ".00$"
+ TTPRC     DB      13,10,13,10,"    Total order price (add up all the order price) > RM $"
+ TTODPRC1  DB      0
+ TTODPRC2  DB      0
+ CONTINUE  DB      13,10,13,10,"    Any add-ons? (Y/y = Yes, N/n = No) > $"
+ MDCHOICE2 DB      ?
+ 
+ QTY1      DB     0
+ QTY2      DB     0
+ P1        DB     1
+ P2        DB     2 
+ P3        DB     4  
+ P4        DB     5
+ Q1        DB     0  
+ Q2        DB     0   
+ R1        DB     0
+ R2        DB     0
+ TTPRICE   DB     0
+;---------------------DRINK MENU-----------------------
+ MENU2     DB     "       ###############################################"
+           DB     13,10,"       |NO.| DRINKS              | PRICE(RM) | STOCK |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"       | 1.| Teh tarik           |   2.00    |  999+ |"
+           DB     13,10,"       | 2.| Milo                |   2.00    |  999+ |"
+           DB     13,10,"       | 3.| Kopi                |   2.00    |  999+ |"
+           DB     13,10,"       | 4.| Air Sirap           |   2.50    |  999+ |"
+           DB     13,10,"       | 5.| 100 plus            |   3.00    |  999+ |"
+           DB     13,10,"       | 6.| Coca-cola           |   3.00    |  999+ |"
+           DB     13,10,"       ###############################################"
+           DB     13,10,"                   7. Return to main menu             "
+           DB     13,10,"       ###############################################$"
+ MSG8      DB     13,10,13,10,"      Enter your choice  (1 - 7)          > $"
+ MSG9      DB     13,10,"      Enter the quantity (up to 99)       > $"
+ MSG10     DB     13,10,"      Order price                         > RM $"
+ MSG11     DB     13,10,13,10,"    Total order price (add up all the order price) > RM $"
+ MSG12     DB     13,10,13,10,"    Any add-ons? (Y/y = Yes, N/n = No) > $"
+
+ CHOICE2    DB     0
+ COUNT2     DB     0
+ TEN        DB     10
+ TWO        DB     2
+ THREE      DB     3
+ TFIVE      DB     25
+
+ TOTALOPQ   DB     0
+ TOTALOPR   DB     0
+ TOTALOPQ2  DB     0
+ TOTALOPR2  DB     0
+
+ TTOP       DB     0   ;TT ORDER PRICE (2 BYTES)
+ TTQ        DB     0   ;TT QUOTIENT
+ TTR        DB     0   ;TT REMAINDER
+ TTQ2       DB     0
+ TTR2       DB     0
+ CTN        DB     ?            ;CONTINUE?
+
+ MLOP       DB     0   
+ MLQ        DB     0   
+ MLR        DB     0   
+ MLQ2       DB     0
+ MLR2       DB     0
+
+ KPOP       DB     0   
+ KPQ        DB     0   
+ KPR        DB     0   
+ KPQ2       DB     0
+ KPR2       DB     0
+
+ ASOP       DB     0   
+ ASQ        DB     0   
+ ASR        DB     0   
+ ASQ2       DB     0
+ ASR2       DB     0
+ ASQ3       DB     0
+ ASR3       DB     0 
+
+ IPOP       DB     0   
+ IPQ        DB     0   
+ IPR        DB     0   
+ IPQ2       DB     0
+ IPR2       DB     0 
+
+ CCOP       DB     0   
+ CCQ        DB     0   
+ CCR        DB     0   
+ CCQ2       DB     0
+ CCR2       DB     0
+
+;---------------------DESSERTS MENU-----------------------
+ DMENU     DB            "       ###############################################"
+           DB      13,10,"       |NO.| DESSERTS            | PRICE(RM) | STOCK |"
+           DB      13,10,"       ###############################################"
+           DB      13,10,"       | 1.| Ais kacang          |   3.00    |  999+ |"
+           DB      13,10,"       | 2.| Cendol              |   3.00    |  999+ |"
+           DB      13,10,"       | 3.| Rojak               |   6.00    |  999+ |"
+           DB      13,10,"       ###############################################"
+           DB      13,10,"                   4. Return to Main Menu"
+           DB      13,10,"       ###############################################"
+           DB      13,10,13,10,"      Enter your choice  (1 - 4)      > $"
+ DCHOICE   DB      0
+ DCHOICE2  DB      ?
+ 
+ P5        DB      3
+ P6        DB      3
+ P7        DB      6
+;-------------TOTAL PRICE CALCULATION--------------
+TEHQTY     DB      0      ;TTQTY[3]
+TEHQTY2    DB      0      ;TTQTY[2]
+
+MILOQTY    DB      0
+MILOQTY2   DB      0
+
+KOPIQTY    DB      0
+KOPIQTY2   DB      0
+
+AIRQTY     DB      0
+AIRQTY2    DB      0
+
+IOOQTY     DB      0
+IOOQTY2    DB      0
+
+COKEQTY    DB      0
+COKEQTY2   DB      0
+;---------------------PAYMENT-----------------------
+MENU3      DB     "       ##############################"
+           DB     13,10,"       |         - PAYMENT -        |"
+           DB     13,10,"       ##############################$"
+
+MSG13      DB     13,10,13,10,"       Total Price  : RM $"
+MSG14      DB     13,10,"       Total Balance: RM $"
+MSG15      DB     13,10,13,10,"       Total Payment: RM $"
+MSG18      DB     13,10,13,10,"       PRESS ANY KEY TO GET RECEIPT!$"
+ERRORMSG3  DB     13,10,"PLEASE INSERT AGAIN"
+MSG20      DB     13,10,13,10,"       1. Back to home page    2. Confirm order > $"
+CTN2       DB     0
+
+TOTAL      DB     0
+TPQ        DB     0      ;TOTAL PRICE QUOTIENT
+TPR        DB     0      ;TOTAL PRICE REMAINDER
+TPQ2       DB     0 
+TPR2       DB     0
+
+BLN        DB     0
+BLN2       DB     0
+BLN3       DB     0
+
+RECEIPT    DB    13,10,13,10,"       ##########################################"
+           DB    13,10,"       |                - RECEIPT -             |"
+           DB    13,10,"       |             - YUMCHA   MAMAK -         |"
+           DB    13,10,"       |========================================|"
+           DB    13,10,"       |  TOTAL PRICE              : RM $"
+RECEIPT2   DB    "  |$"            
+RECEIPT3   DB    13,10,"       |                                        |"
+           DB    13,10,"       |  TOTAL PAYMENT            : RM $"
+RECEIPT4   DB    13,10,"       |  TOTAL BALANCE            : RM $"
+RECEIPT5   DB    13,10,"       |                                        |"
+           DB    13,10,"       |########################################|"
+           DB    13,10,"       |       THANK YOU FOR YOUR ORDER         |"
+           DB    13,10,"       ##########################################$"
+MSG19      DB    13,10,13,10,"           PRESS ANY KEY TO BACK TO HOME PAGE$"         
+
+.CODE
+MAIN PROC 
+ MOV AX,@DATA
+ MOV DS,AX
+;---------------------HOMEPAGE---------------------
+HOMEPG:
+;---CLEAR SCREEN
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+;---BORDER
+ MOV AX,0
+ MOV CX,30
+ MOV SI,0
+
+BORDER:
+ MOV AH,02H
+ MOV DL,CHAR[SI]
+ INT 21H
+ INC SI
+ LOOP BORDER
+
+;---DISPLAY WELCOME MESSAGE
+ MOV AH,09H
+ LEA DX,WLC
+ INT 21H
+
+;---NEWLINE
+ MOV AH,09H
+ LEA DX,NL
+ INT 21H
+
+;---BORDER1
+ MOV AX,0
+ MOV CX,30
+ MOV SI,0
+
+BORDER1:
+ MOV AH,02H
+ MOV DL,CHAR[SI]
+ INT 21H
+ INC SI
+ LOOP BORDER1
+
+;---DISPLAY HOME MENU
+ MOV AH,09H
+ LEA DX,HOME
+ INT 21H
+
+;---PROMPT AND GET CHOICE
+PROMPT:
+ MOV AH,09H
+ LEA DX,MSG1
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV CHOICE,AL
+
+CHK:
+ CMP CHOICE,31H
+ JE SIGNUP
+ CMP CHOICE,32H
+ JE LOGIN
+ CMP CHOICE,33H
+ JE DPLYMENU
+ CMP CHOICE,34H
+ JE SDOWN
+ JNE ERROR1
+
+LOGIN:
+ JMP LOGINPG
+
+SDOWN:
+ MOV AH,09H
+ LEA DX,MSG7
+ INT 21H
+ JMP EXIT
+
+DPLYMENU:
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+ MOV AH,09H
+ LEA DX,MDDDMENU
+ INT 21H
+ 
+ MOV AH,09H
+ LEA DX,PPRESS
+ INT 21H
+ 
+ MOV AH,07H
+ INT 21H
+ JMP HOMEPG
+
+ERROR1:
+ MOV AH,09H
+ LEA DX,ERRORMSG1
+ INT 21H
+ JMP PROMPT
+ 
+;---------------------SIGN UP PAGE---------------------
+;---CLEAR SCREEN (IF EQUAL 1)
+SIGNUP: 
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+ MOV AH,09H
+ LEA DX,MSG2
+ INT 21H
+
+;---PROMPT AND GET ID
+L1:
+
+CHKT:
+ CMP COUNT3,3
+ JE JEXIT2
+
+ MOV AH,09H
+ LEA DX,MSG3
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,USERID
+ INT 21H    
+
+;---PROMPT AND GET PASSWORD
+ MOV AH,09H
+ LEA DX,MSG4
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,PASSWORD
+ INT 21H
+ JMP CHKID
+
+JEXIT2:
+ JMP EXIT2
+
+;---ID VALIDATION (LESS THAN 10 INT/CHAR)
+CHKID:
+ CMP USERID[1],10
+ JBE CHKPWD           
+ JA ERROR2
+
+ERROR2: 
+ MOV AH,09H
+ LEA DX,ERRORMSG2
+ INT 21H
+ INC COUNT
+ JMP L1
+
+;---PWD VALIDATION (5-8 CHAR & UPPERCASE)
+CHKPWD:
+ CMP PASSWORD[1],5
+ JAE CHKPWD2
+ JB ERROR2
+ 
+CHKPWD2:
+ CMP PASSWORD[1],8
+ JBE CHKPWD3
+ JA ERROR2
+
+CHKPWD3:
+ CMP IPWD,41H
+ JAE CHKPWD4
+ JB ERROR2
+
+CHKPWD4:
+ CMP IPWD,5AH
+ JBE VALID
+ JA ERROR2
+
+VALID:
+ MOV AH,09H
+ LEA DX,MSG5
+ INT 21H
+ 
+ MOV AH,09H
+ LEA DX,MSG6
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP HOMEPG
+
+EXIT2:
+ JMP EXIT
+;---------------------LOG IN PAGE---------------------
+;---CLEAR SCREEN (IF EQUAL 2)
+;-----CLEAR
+LOGINPG:
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+;-----DISPLAY LOGIN MENU
+ MOV AH,09H
+ LEA DX,LGMENU
+ INT 21H
+
+;-----GEI USER ID 
+RWRONG:
+
+GETID:
+ CMP COUNT,3
+ JE EXIT1
+
+ MOV AH,09H
+ LEA DX,LGID
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,ID
+ INT 21H
+
+;-----GET USER PASSWORD
+ MOV AH,09H
+ LEA DX,LGPSW
+ INT 21H
+ 
+ MOV AH,0AH
+ LEA DX,PSW
+ INT 21H
+
+;-----CHECK USER ID
+ MOV SI,0
+CHKID3:
+ CMP SI,6
+ JE CLEAN
+ MOV BL,UID[SI]
+ CMP BL,IID[SI]
+ JE NEXT
+ JNE WRONG
+
+NEXT:
+ INC SI
+ JMP CHKID3
+
+EXIT1:
+ JMP EXIT
+
+CLEAN:
+ MOV SI,0
+ JMP CHKPSW
+
+WRONG:
+ MOV AH,09H
+ LEA DX,LGWRG
+ INT 21H
+ INC COUNT
+ JMP RWRONG
+
+;-----CHECK USER PASSWORD
+CHKPSW:
+ CMP SI,6
+ JE LGINSUS
+ MOV BL,UPSW[SI]
+ CMP BL,IPSW[SI]
+ JE NEXT2
+ JNE WRONG
+
+NEXT2:
+ INC SI
+ JMP CHKPSW
+
+LGINSUS:
+ MOV AH,09H
+ LEA DX,LGSUS
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP MAINMENU
+;---------------------MAIN MENU PAGE---------------------
+MAINMENU:
+;-----CLEAN
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+;-----DISPLAY MAIN MENU MENU
+ MOV AH,09H
+ LEA DX,MMENU
+ INT 21H
+
+;-----USER CHOICE
+ MOV AH,01H
+ INT 21H
+ MOV MCHOICE,AL
+
+;-----CHOICE
+MCHK:
+ CMP MCHOICE,"1"
+ JE MAINDISHES
+ CMP MCHOICE,"2"
+ JE JDRINKS
+ CMP MCHOICE,"3"
+ JE DESSERTS
+ CMP MCHOICE,"4"
+ JE LOGOUT
+ JMP MRETURN
+
+MAINDISHES:
+ JMP MAINDISHESMENU
+
+JDRINKS:
+ JMP DRINKS
+
+DESSERTS:
+ JMP DESSERTSMENU
+
+LOGOUT:
+ MOV AH,09H
+ LEA DX,MLOG
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV MCHOICE2,AL
+ JMP LGCHK
+
+LGCHK:
+ CMP MCHOICE2,"Y"
+ JE EXIT3
+ CMP MCHOICE2,"y"
+ JE EXIT3
+ CMP MCHOICE2,"N"
+ JE MAINMENU
+ CMP MCHOICE2,"n"
+ JE MAINMENU
+ JMP MRETURN
+
+EXIT3:
+ JMP HOMEPG
+
+MRETURN:
+ MOV AH,09H
+ LEA DX,ERROR
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP MAINMENU
+
+;-------------------MAIN DISHES PAGE----------------
+MAINDISHESMENU:
+;-----CLEAN
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+;-----DISPLAY MAIN DISHES MENU:
+ MOV AH,09H
+ LEA DX,MDMENU
+ INT 21H
+
+;-----GET USER CHOICE
+ MOV AH,01H
+ INT 21H
+ MOV MDCHOICE,AL
+
+;-----CHECK USER CHOICE
+MDCHK:
+ CMP MDCHOICE,"1"
+ JE ROTICANAI
+ CMP MDCHOICE,"2"
+ JE NASILEMAK
+ CMP MDCHOICE,"3"
+ JE MEEGORENG
+ CMP MDCHOICE,"4"
+ JE NASIGORENG
+ CMP MDCHOICE,"5"
+ JE AYAMGORENG
+ CMP MDCHOICE,"6"
+ JE RMAINMENU1
+ JMP RMDMENU
+
+RMDMENU:
+ MOV AH,09H
+ LEA DX,ERROR
+ INT 21H
+ 
+ MOV AH,09H
+ LEA DX,PRESS
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP MAINDISHESMENU
+
+ROTICANAI:
+ JMP CALCULATION1
+
+NASILEMAK:
+ JMP CALCULATION2
+
+MEEGORENG:
+ JMP CALCULATION2
+
+NASIGORENG:
+ JMP CALCULATION3
+
+AYAMGORENG:
+ JMP CALCULATION4
+
+RMAINMENU1: 
+ JMP MAINMENU
+
+CALCULATION1:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P1
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY
+
+CALCULATION2:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P2
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY
+
+CALCULATION3:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P3
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY
+
+CALCULATION4:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P4
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY
+
+DISPLAY:
+ MOV AH,09H
+ LEA DX,OP
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,Q2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R1	
+ INT 21H
+ 
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,TTPRC
+ INT 21H
+
+;-----TOTAL PRICE CALCULATION
+ MOV AX,0
+ MOV BL,0
+
+ MOV BL,TTODPRC1
+ ADD TTODPRC2,BL
+
+ MOV AL,TTODPRC2
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+
+ MOV AH,02H
+ MOV DL,Q2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R1	
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+ JMP CONTINUE1
+
+CONTINUE1:
+ MOV AH,09H
+ LEA DX,CONTINUE
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV MDCHOICE2,AL
+
+CHKCONTINUE:
+ CMP MDCHOICE2,"Y"
+ JE RMAINMENU2
+ CMP MDCHOICE2,"y"
+ JE RMAINMENU2
+ CMP MDCHOICE2,"N"
+ JE GOPAYMENT
+ CMP MDCHOICE2,"n"
+ JE GOPAYMENT
+ JMP RMDMENU2
+
+GOPAYMENT:
+ JMP PYMTPG
+
+RMDMENU2:
+ MOV AH,09H
+ LEA DX,ERROR3
+ INT 21H
+ 
+ MOV AH,09H
+ LEA DX,PRESS2
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP CONTINUE1
+
+RMAINMENU2:
+ JMP MAINMENU
+
+;---------------------DRINK PAGE---------------------
+;---CLEAR SCREEN (IF EQUAL 3)
+DRINKS:
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+ MOV AH,09H
+ LEA DX,MENU2
+ INT 21H
+
+PROMPT3:
+ MOV AH,09H
+ LEA DX,MSG8
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV CHOICE2,AL
+
+DCHK2:
+ CMP CHOICE2,31H
+ JE DRINK1
+ CMP CHOICE2,32H
+ JE DRINK2
+ CMP CHOICE2,33H
+ JE DRINK3
+ CMP CHOICE2,34H
+ JE DRINK4
+ CMP CHOICE2,35H
+ JE DRINK5
+ CMP CHOICE2,36H
+ JE DRINK6
+ CMP CHOICE2,37H
+ JE JMAINMENU3            
+ JNE PROMPT3
+
+DRINK1:
+ JMP GETTTQTY
+
+DRINK2:
+ JMP GETMLQTY
+
+DRINK4:
+ JMP GETASQTY  
+
+DRINK3:
+ JMP GETKPQTY
+
+DRINK5:
+ JMP GETIPQTY
+
+DRINK6:
+ JMP GETCCQTY
+
+JMAINMENU3:
+ JMP MAINMENU
+
+;---GET QUANTITY
+GETTTQTY:
+ MOV AH,09H
+ LEA DX,MSG9
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,TTQTY
+ INT 21H
+ 
+ MOV AX,0
+ ADD AL,TTQTY[3]
+ ADD TEHQTY,AL
+ ADD AH,TTQTY[2]
+ ADD TEHQTY2,AH   
+
+;---CHK QTY DIGIT
+CHKTTQTY:
+ CMP TTQTY[1],1
+ JE CHKTTQTY2       ;1 DIGIT QTY
+ CMP TTQTY[1],2
+ JE JCHKTTQTY3      ;2 DIGITS QTY
+ JNE JGETTTQTY
+
+JCHKTTQTY3:
+ JMP CHKTTQTY3
+
+JGETTTQTY:
+ JMP GETTTQTY
+
+;---1 DIGIT QTY AND 1 DIGIT ORDER PRICE
+CHKTTQTY2:
+ CMP TTQTY[2],34H  
+ JBE CHKTTQTY4     ;ONLY ALLOW 1-4
+ JA CHKTTQTY5      ;ABOVE 5
+
+CHKTTQTY4:
+ CMP TTQTY[2],31H
+ JAE CALTTOP
+
+CALTTOP:
+ SUB TTQTY[2],30H
+ MOV AX,0
+ MOV AL,TTQTY[2]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ MOV TTOP,AL
+ ADD TTOP,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTOP
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---PROMPT USER WHETHER WANT TO CONTINUE OR NOT (REUSABLE)
+PROMPT2:
+ MOV AH,09H
+ LEA DX,MSG12
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV CTN,AL
+
+ ;---CONTINUE OR NOT
+ CHK2:
+  CMP CTN,'Y'
+  JE JMAINMENU2            ;Y = JMP BACK TO THE MAIN MENU PAGE (MAIN/DESSERT/DRINKS)
+  CMP CTN,'y'
+  JE JMAINMENU2
+  CMP CTN,'N'
+  JE JPYMTPG             ;N = JMP TO PAYMENT PAGE
+  CMP CTN,'n'
+  JE JPYMTPG
+  JNE PROMPT2
+
+ JMAINMENU2:
+  JMP MAINMENU 
+
+ JPYMTPG:
+  JMP PYMTPG 
+
+;---1 DIGIT QTY BUT 2 DIGITS ORDER PRICE
+CHKTTQTY5:
+ CMP TTQTY[2],35H
+ JAE CHKTTQTY6         ;ONLY ALLOW 5-9        
+
+CHKTTQTY6:
+ CMP TTQTY[2],39H
+ JBE CALTTOP2
+
+CALTTOP2:
+ SUB TTQTY[2],30H
+ MOV AX,0
+ MOV AL,TTQTY[2]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV TTQ,AL
+ MOV TTR,AH
+
+ ADD TTQ,30H
+ ADD TTR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 2 DIGITS OF ORDER PRICE (10-49)
+CHKTTQTY3:
+ CMP TTQTY[2],34H
+ JBE CHKTTQTY8      ;ONLY ALLOW 10-49
+ JA CHKTTQTY9       ;ABOVE 50 BUT BELOW 100 (50-99)
+
+CHKTTQTY8:
+ CMP TTQTY[2],31H
+ JAE CALTTOP3
+
+CALTTOP3:
+ SUB TTQTY[2],30H
+ SUB TTQTY[3],30H
+ MOV AX,0
+ MOV AL,TTQTY[2]
+ MUL TEN
+ ADD AL,TTQTY[3]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV TTQ,AL
+ MOV TTR,AH
+
+ ADD TTQ,30H
+ ADD TTR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC   
+
+;---2 DIGITS OF QTY AND 3 DIGITS OF ORDER PRICE (50-99)
+CHKTTQTY9:
+ CMP TTQTY[2],35H
+ JAE CHKTTQTY10
+
+CHKTTQTY10:
+ CMP TTQTY[2],39H
+ JBE CALTTOP4
+
+CALTTOP4:
+ SUB TTQTY[2],30H
+ SUB TTQTY[3],30H
+ MOV AX,0
+ MOV AL,TTQTY[2]
+ MUL TEN
+ ADD AL,TTQTY[3]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV TTQ,AL
+ MOV TTR,AH
+
+ MOV AX,0
+ MOV AL,TTQ
+ DIV TEN
+
+ MOV TTQ2,AL
+ MOV TTR2,AH
+
+ ADD TTQ2,30H
+ ADD TTR2,30H
+ ADD TTR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,TTQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,TTR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---DRINK2
+GETMLQTY:
+ MOV AH,09H
+ LEA DX,MSG9
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,MLQTY
+ INT 21H
+
+ MOV AX,0
+ ADD AL,MLQTY[3]
+ ADD MILOQTY,AL
+ ADD AH,MLQTY[2]
+ ADD MILOQTY2,AH   
+
+;---CHK QTY DIGIT
+CHKMLQTY:
+ CMP MLQTY[1],1
+ JE CHKMLQTY2
+ CMP MLQTY[1],2
+ JE JCHKMLQTY3        
+ JNE GETMLQTY
+
+JCHKMLQTY3:
+ JMP CHKMLQTY3 
+
+;---1 DIGIT QTY AND 1 DIGIT ORDER PRICE
+CHKMLQTY2:
+ CMP MLQTY[2],34H  
+ JBE CHKMLQTY4     ;ONLY ALLOW 1-4
+ JA CHKMLQTY5      ;ABOVE 5
+
+CHKMLQTY4:
+ CMP MLQTY[2],31H
+ JAE CALMLOP
+
+CALMLOP:
+ SUB MLQTY[2],30H
+ MOV AX,0
+ MOV AL,MLQTY[2]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ MOV MLOP,AL
+ ADD MLOP,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLOP
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---1 DIGIT QTY BUT 2 DIGITS ORDER PRICE
+CHKMLQTY5:
+ CMP MLQTY[2],35H
+ JAE CHKMLQTY6         ;ONLY ALLOW 5-9        
+
+CHKMLQTY6:
+ CMP MLQTY[2],39H
+ JBE CALMLOP2
+
+CALMLOP2:
+ SUB MLQTY[2],30H
+ MOV AX,0
+ MOV AL,MLQTY[2]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV MLQ,AL
+ MOV MLR,AH
+
+ ADD MLQ,30H
+ ADD MLR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 2 DIGITS OF ORDER PRICE (10-49)
+CHKMLQTY3:
+ CMP MLQTY[2],34H
+ JBE CHKMLQTY8      ;ONLY ALLOW 10-49
+ JA CHKMLQTY9       ;ABOVE 50 BUT BELOW 100 (50-99)
+
+CHKMLQTY8:
+ CMP MLQTY[2],31H
+ JAE CALMLOP3
+
+CALMLOP3:
+ SUB MLQTY[2],30H
+ SUB MLQTY[3],30H
+ MOV AX,0
+ MOV AL,MLQTY[2]
+ MUL TEN
+ ADD AL,MLQTY[3]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV MLQ,AL
+ MOV MLR,AH
+
+ ADD MLQ,30H
+ ADD MLR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 3 DIGITS OF ORDER PRICE (50-99)
+CHKMLQTY9:
+ CMP MLQTY[2],35H
+ JAE CHKMLQTY10
+
+CHKMLQTY10:
+ CMP MLQTY[2],39H
+ JBE CALMLOP4
+
+CALMLOP4:
+ SUB MLQTY[2],30H
+ SUB MLQTY[3],30H
+ MOV AX,0
+ MOV AL,MLQTY[2]
+ MUL TEN
+ ADD AL,MLQTY[3]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV MLQ,AL
+ MOV MLR,AH
+
+ MOV AX,0
+ MOV AL,MLQ
+ DIV TEN
+
+ MOV MLQ2,AL
+ MOV MLR2,AH
+
+ ADD MLQ2,30H
+ ADD MLR2,30H
+ ADD MLR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,MLQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,MLR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---DRINK3
+GETKPQTY:
+ MOV AH,09H
+ LEA DX,MSG9
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,KPQTY
+ INT 21H
+
+ MOV AX,0
+ ADD AL,KPQTY[3]
+ ADD KOPIQTY,AL
+ ADD AH,KPQTY[2]
+ ADD KOPIQTY2,AH   
+
+;---CHK QTY DIGIT
+CHKKPQTY:
+ CMP KPQTY[1],1
+ JE CHKKPQTY2
+ CMP KPQTY[1],2
+ JE JCHKKPQTY3           
+ JNE GETKPQTY
+
+JCHKKPQTY3:
+ JMP CHKKPQTY3 
+
+;---1 DIGIT QTY AND 1 DIGIT ORDER PRICE
+CHKKPQTY2:
+ CMP KPQTY[2],34H  
+ JBE CHKKPQTY4     ;ONLY ALLOW 1-4
+ JA CHKKPQTY5      ;ABOVE 5
+
+CHKKPQTY4:
+ CMP KPQTY[2],31H
+ JAE CALKPOP
+
+CALKPOP:
+ SUB KPQTY[2],30H
+ MOV AX,0
+ MOV AL,KPQTY[2]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ MOV KPOP,AL
+ ADD KPOP,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPOP
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---1 DIGIT QTY BUT 2 DIGITS ORDER PRICE
+CHKKPQTY5:
+ CMP KPQTY[2],35H
+ JAE CHKKPQTY6         ;ONLY ALLOW 5-9        
+
+CHKKPQTY6:
+ CMP KPQTY[2],39H
+ JBE CALKPOP2
+
+CALKPOP2:
+ SUB KPQTY[2],30H
+ MOV AX,0
+ MOV AL,KPQTY[2]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV KPQ,AL
+ MOV KPR,AH
+
+ ADD KPQ,30H
+ ADD KPR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 2 DIGITS OF ORDER PRICE (10-49)
+CHKKPQTY3:
+ CMP KPQTY[2],34H
+ JBE CHKKPQTY8      ;ONLY ALLOW 10-49
+ JA CHKKPQTY9       ;ABOVE 50 BUT BELOW 100 (50-99)
+
+CHKKPQTY8:
+ CMP KPQTY[2],31H
+ JAE CALKPOP3
+
+CALKPOP3:
+ SUB KPQTY[2],30H
+ SUB KPQTY[3],30H
+ MOV AX,0
+ MOV AL,KPQTY[2]
+ MUL TEN
+ ADD AL,KPQTY[3]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV KPQ,AL
+ MOV KPR,AH
+
+ ADD KPQ,30H
+ ADD KPR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 3 DIGITS OF ORDER PRICE (50-99)
+CHKKPQTY9:
+ CMP KPQTY[2],35H
+ JAE CHKKPQTY10
+
+CHKKPQTY10:
+ CMP KPQTY[2],39H
+ JBE CALKPOP4
+
+CALKPOP4:
+ SUB KPQTY[2],30H
+ SUB KPQTY[3],30H
+ MOV AX,0
+ MOV AL,KPQTY[2]
+ MUL TEN
+ ADD AL,KPQTY[3]
+ MUL TWO
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV KPQ,AL
+ MOV KPR,AH
+
+ MOV AX,0
+ MOV AL,KPQ
+ DIV TEN
+
+ MOV KPQ2,AL
+ MOV KPR2,AH
+
+ ADD KPQ2,30H
+ ADD KPR2,30H
+ ADD KPR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,KPQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,KPR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---DRINK5
+GETIPQTY:
+ MOV AH,09H
+ LEA DX,MSG9
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,IPQTY
+ INT 21H
+
+ MOV AX,0
+ ADD AL,IPQTY[3]
+ ADD IOOQTY,AL
+ ADD AH,IPQTY[2]
+ ADD IOOQTY2,AH
+
+;---CHK QTY DIGIT
+CHKIPQTY:
+ CMP IPQTY[1],1
+ JE CHKIPQTY2
+ CMP IPQTY[1],2
+ JE JCHKIPQTY3        
+ JNE GETIPQTY
+
+JCHKIPQTY3:
+ JMP CHKIPQTY3   
+
+;---1 DIGIT QTY AND 1 DIGIT ORDER PRICE
+CHKIPQTY2:
+ CMP IPQTY[2],33H  
+ JBE CHKIPQTY4     ;ONLY ALLOW 1-3
+ JA CHKIPQTY5      ;ABOVE 4
+
+CHKIPQTY4:
+ CMP IPQTY[2],31H
+ JAE CALIPOP
+
+CALIPOP:
+ SUB IPQTY[2],30H
+ MOV AX,0
+ MOV AL,IPQTY[2]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ MOV IPOP,AL
+ ADD IPOP,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPOP
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---1 DIGIT QTY BUT 2 DIGITS ORDER PRICE
+CHKIPQTY5:
+ CMP IPQTY[2],34H
+ JAE CHKIPQTY6         ;ONLY ALLOW 4-9        
+
+CHKIPQTY6:
+ CMP IPQTY[2],39H
+ JBE CALIPOP2
+
+CALIPOP2:
+ SUB IPQTY[2],30H
+ MOV AX,0
+ MOV AL,IPQTY[2]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV IPQ,AL
+ MOV IPR,AH
+
+ ADD IPQ,30H
+ ADD IPR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 2 DIGITS OF ORDER PRICE (10-33)
+CHKIPQTY3:
+ CMP IPQTY[2],31H     ;10-19
+ JE JCHKIPQTY8        
+ CMP IPQTY[2],32H     ;20-29
+ JE JCHKIPQTY8
+ CMP IPQTY[2],33H     ;30-33
+ JE CHKIPQTY12
+ JNE JCHKIPQTY9
+
+JCHKIPQTY8:
+ JMP CHKIPQTY8 
+
+JCHKIPQTY9:
+ JMP CHKIPQTY9
+
+CHKIPQTY8:
+ CMP IPQTY[3],30H
+ JAE CHKIPQTY11
+
+CHKIPQTY11:
+ CMP IPQTY[3],39H
+ JBE CALIPOP3
+
+CHKIPQTY12:
+ CMP IPQTY[3],30H
+ JAE CHKIPQTY13
+
+CHKIPQTY13:
+ CMP IPQTY[3],33H
+ JBE CALIPOP3
+ JA CALIPOP4         ;34-99 (2 DIGITS QTY BUT 3 DIGITS ORDER PRICE)  
+
+CALIPOP3:
+ SUB IPQTY[2],30H
+ SUB IPQTY[3],30H
+ MOV AX,0
+ MOV AL,IPQTY[2]
+ MUL TEN
+ ADD AL,IPQTY[3]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV IPQ,AL
+ MOV IPR,AH
+
+ ADD IPQ,30H
+ ADD IPR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 3 DIGITS OF ORDER PRICE (34-99)
+CHKIPQTY9:
+ CMP IPQTY[2],34H
+ JAE CHKIPQTY10
+
+CHKIPQTY10:
+ CMP IPQTY[2],39H
+ JBE CALIPOP4
+
+CALIPOP4:
+ SUB IPQTY[2],30H
+ SUB IPQTY[3],30H
+ MOV AX,0
+ MOV AL,IPQTY[2]
+ MUL TEN
+ ADD AL,IPQTY[3]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV IPQ,AL
+ MOV IPR,AH
+
+ MOV AX,0
+ MOV AL,IPQ
+ DIV TEN
+
+ MOV IPQ2,AL
+ MOV IPR2,AH
+
+ ADD IPQ2,30H
+ ADD IPR2,30H
+ ADD IPR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,IPQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,IPR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---DRINK 6
+GETCCQTY:
+ MOV AH,09H
+ LEA DX,MSG9
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,CCQTY
+ INT 21H
+
+ MOV AX,0
+ ADD AL,CCQTY[3]
+ ADD COKEQTY,AL
+ ADD AH,CCQTY[2]
+ ADD COKEQTY2,AH
+
+;---CHK QTY DIGIT
+CHKCCQTY:
+ CMP CCQTY[1],1
+ JE CHKCCQTY2
+ CMP CCQTY[1],2
+ JE JCHKCCQTY3          
+ JNE GETCCQTY
+
+JCHKCCQTY3:
+ JMP CHKCCQTY3 
+
+;---1 DIGIT QTY AND 1 DIGIT ORDER PRICE
+CHKCCQTY2:
+ CMP CCQTY[2],33H  
+ JBE CHKCCQTY4     ;ONLY ALLOW 1-3
+ JA CHKCCQTY5      ;ABOVE 4
+
+CHKCCQTY4:
+ CMP CCQTY[2],31H
+ JAE CALCCOP
+
+CALCCOP:
+ SUB CCQTY[2],30H
+ MOV AX,0
+ MOV AL,CCQTY[2]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ MOV CCOP,AL
+ ADD CCOP,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCOP
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---1 DIGIT QTY BUT 2 DIGITS ORDER PRICE
+CHKCCQTY5:
+ CMP CCQTY[2],34H
+ JAE CHKCCQTY6         ;ONLY ALLOW 4-9        
+
+CHKCCQTY6:
+ CMP CCQTY[2],39H
+ JBE CALCCOP2
+
+CALCCOP2:
+ SUB CCQTY[2],30H
+ MOV AX,0
+ MOV AL,CCQTY[2]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV CCQ,AL
+ MOV CCR,AH
+
+ ADD CCQ,30H
+ ADD CCR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 2 DIGITS OF ORDER PRICE (10-33)
+CHKCCQTY3:
+ CMP CCQTY[2],31H     ;10-19
+ JE JCHKCCQTY8        
+ CMP CCQTY[2],32H     ;20-29
+ JE JCHKCCQTY8
+ CMP CCQTY[2],33H     ;30-33
+ JE CHKCCQTY12
+ JNE JCHKCCQTY9
+
+JCHKCCQTY8:
+ JMP CHKCCQTY8 
+
+JCHKCCQTY9:
+ JMP CHKCCQTY9
+
+CHKCCQTY8:
+ CMP CCQTY[3],30H
+ JAE CHKCCQTY11
+
+CHKCCQTY11:
+ CMP CCQTY[3],39H
+ JBE CALCCOP3
+
+CHKCCQTY12:
+ CMP CCQTY[3],30H
+ JAE CHKCCQTY13
+
+CHKCCQTY13:
+ CMP CCQTY[3],33H
+ JBE CALCCOP3
+ JA CALCCOP4         ;34-99 (2 DIGITS QTY BUT 3 DIGITS ORDER PRICE)  
+
+CALCCOP3:
+ SUB CCQTY[2],30H
+ SUB CCQTY[3],30H
+ MOV AX,0
+ MOV AL,CCQTY[2]
+ MUL TEN
+ ADD AL,CCQTY[3]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV CCQ,AL
+ MOV CCR,AH
+
+ ADD CCQ,30H
+ ADD CCR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 3 DIGITS OF ORDER PRICE (34-99)
+CHKCCQTY9:
+ CMP CCQTY[2],34H
+ JAE CHKCCQTY10
+
+CHKCCQTY10:
+ CMP CCQTY[2],39H
+ JBE CALCCOP4
+
+CALCCOP4:
+ SUB CCQTY[2],30H
+ SUB CCQTY[3],30H
+ MOV AX,0
+ MOV AL,CCQTY[2]
+ MUL TEN
+ ADD AL,CCQTY[3]
+ MUL THREE
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+
+ MOV CCQ,AL
+ MOV CCR,AH
+
+ MOV AX,0
+ MOV AL,CCQ
+ DIV TEN
+
+ MOV CCQ2,AL
+ MOV CCR2,AH
+
+ ADD CCQ2,30H
+ ADD CCR2,30H
+ ADD CCR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,CCQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,CCR
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---DRINK4
+GETASQTY: 
+ MOV AH,09H
+ LEA DX,MSG9
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,ASQTY
+ INT 21H
+
+ MOV AX,0
+ ADD AL,ASQTY[3]
+ ADD AIRQTY,AL
+ ADD AH,ASQTY[2]
+ ADD AIRQTY2,AH
+
+ ;---CHK QTY DIGIT
+CHKASQTY:
+ CMP ASQTY[1],1
+ JE CHKASQTY2
+ CMP ASQTY[1],2
+ JE JCHKASQTY3       
+ JNE GETASQTY
+
+JCHKASQTY3:
+ JMP CHKASQTY3
+
+;---1 DIGIT QTY AND 2 DIGIT ORDER PRICE 
+CHKASQTY2:
+ CMP ASQTY[2],33H  
+ JBE CHKASQTY4     ;ONLY ALLOW 1-3
+ JA CHKASQTY5      ;ABOVE 4
+
+CHKASQTY4:
+ CMP ASQTY[2],31H
+ JAE CALASOP
+
+CALASOP:
+ SUB ASQTY[2],30H
+ MOV AX,0
+ MOV AL,ASQTY[2]
+ MUL TFIVE
+
+ DIV TEN
+
+ MOV ASQ,AL
+ MOV TTODPRC1,AL
+ MOV ASR,AH
+
+ ADD ASQ,30H
+ ADD ASR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,ASQ
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,"."
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,ASR
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,30H
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---1 DIGIT QTY BUT 3 DIGITS ORDER PRICE
+CHKASQTY5:
+ CMP ASQTY[2],34H
+ JAE CHKASQTY6         ;ONLY ALLOW 4-9        
+
+CHKASQTY6:
+ CMP ASQTY[2],39H
+ JBE CALASOP2
+
+CALASOP2:
+ SUB ASQTY[2],30H     
+ MOV AX,0
+ MOV AL,ASQTY[2]
+ MUL TFIVE             ;5 * 25 =125
+
+ DIV TEN               ;125 / 10 = 12.5
+
+ MOV ASQ,AL            ;ASQ = 12
+ MOV ASR,AH            ;ASR = 5  
+
+ MOV AX,0
+ MOV AL,ASQ            ;AL = 12
+ MOV TTODPRC1,AL          
+ DIV TEN               ;AL = 1.2 (Q=1,R=2) 
+
+ MOV ASQ2,AL           ;ASQ2 = 1
+ MOV ASR2,AH           ;ASR2 = 2
+
+ ADD ASQ2,30H          ;ASQ2 = 31H (1)
+ ADD ASR2,30H          ;ASR2 = 32H (2)
+ ADD ASR,30H           ;ASR  = 35H (5)
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,ASQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,ASR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,"."
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,ASR
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,30H
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 3 DIGITS OF ORDER PRICE (10-39)
+CHKASQTY3:
+ CMP ASQTY[2],33H
+ JBE CHKASQTY8      ;ONLY ALLOW 10-39
+ JA JCHKASQTY9      ;40-99
+
+CHKASQTY8:
+ CMP ASQTY[2],31H
+ JAE CALASOP3
+
+JCHKASQTY9:
+ JMP CHKASQTY9
+
+CALASOP3:
+ SUB ASQTY[2],30H
+ SUB ASQTY[3],30H
+ MOV AX,0
+ MOV AL,ASQTY[2]
+ MUL TEN
+ ADD AL,ASQTY[3]
+ MUL TFIVE
+
+ DIV TEN
+
+ MOV ASQ,AL
+ MOV TTODPRC1,AL
+ MOV ASR,AH
+
+ MOV AX,0
+ MOV AL,ASQ
+ DIV TEN
+
+ MOV ASQ2,AL
+ MOV ASR2,AH
+
+ ADD ASQ2,30H
+ ADD ASR2,30H
+ ADD ASR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,ASQ2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,ASR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,"."
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,ASR
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,"0"
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H
+
+ JMP TPCALC
+
+;---2 DIGITS OF QTY AND 4 DIGITS OF ORDER PRICE (40-99)
+CHKASQTY9:
+ CMP ASQTY[2],34H
+ JAE CHKASQTY10
+
+CHKASQTY10:
+ CMP ASQTY[2],39H
+ JBE CALASOP4
+
+CALASOP4:
+ SUB ASQTY[2],30H
+ SUB ASQTY[3],30H
+ MOV AX,0
+ MOV AL,ASQTY[2]         ;AL = 4
+ MUL TEN                 ;AL = 40
+ ADD AL,ASQTY[3]         ;AL = 45
+ MUL TFIVE               ;AL = 1125
+
+ DIV TEN                 ;1125 / 10 = 112.5 (Q = 112, R = 5)
+
+ MOV ASQ,AL              ;ASQ = 112
+ MOV TTODPRC1,AL
+ MOV ASR,AH              ;ASR = 5
+
+ MOV AX,0
+ MOV AL,ASQ              ;AL = 112
+ DIV TEN                 ;AL = 11.2 (Q = 11, R = 2)
+
+ MOV ASQ2,AL             ;ASQ2 = 11
+ MOV ASR2,AH             ;ASR2 = 2
+
+ MOV AX,0
+ MOV AL,ASQ2             ;AL = 11
+ DIV TEN                 ;AL = 1.1 (Q = 1, R = 1)
+
+ MOV ASQ3,AL             ;ASQ3 = 1
+ MOV ASR3,AH             ;ASR3 = 1
+
+ ADD ASQ3,30H
+ ADD ASR3,30H
+ ADD ASR2,30H
+ ADD ASR,30H
+
+ MOV AH,09H
+ LEA DX,MSG10
+ INT 21H   
+
+ MOV AH,02H 
+ MOV DL,ASQ3
+ INT 21H
+
+ MOV AH,02H 
+ MOV DL,ASR3
+ INT 21H
+
+ MOV AH,02H 
+ MOV DL,ASR2
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,"."
+ INT 21H
+
+ MOV AH,02H 
+ MOV DL,ASR
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,30H
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG11
+ INT 21H 
+
+ JMP TPCALC
+;-------------------DESSERT---------------------- 
+DESSERTSMENU:
+ MOV AH,00H
+ MOV AL,02H
+ INT 10H
+
+;-----DISPLAY DESSERTS MENU
+ MOV AH,09H
+ LEA DX,DMENU
+ INT 21H
+
+;-----GET USER CHOICE
+ MOV AH,01H
+ INT 21H
+ MOV DCHOICE,AL
+
+;-CHECK USER CHOICE
+DCHK:
+ CMP DCHOICE,"1"
+ JE AISKACANG
+ CMP DCHOICE,"2"
+ JE CENDOL
+ CMP DCHOICE,"3"
+ JE ROJAK
+ CMP DCHOICE,"4"
+ JE RMAINMENU3
+ JMP RDMENU
+
+RDMENU:
+ MOV AH,09H
+ LEA DX,ERROR
+ INT 21H
+  
+ MOV AH,09H
+ LEA DX,PRESS
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP DESSERTSMENU
+
+AISKACANG:
+ JMP CALCULATION5
+
+CENDOL:
+ JMP CALCULATION6
+
+ROJAK:
+ JMP CALCULATION7
+
+RMAINMENU3:
+ JMP MAINMENU
+
+CALCULATION5:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P5
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY2
+
+CALCULATION6:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P6
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY2
+
+CALCULATION7:
+ MOV AH,09H
+ LEA DX,QTY
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY1,AL
+
+ MOV AH,01H
+ INT 21H
+ MOV QTY2,AL
+
+ SUB QTY1,30H
+ SUB QTY2,30H
+
+ MOV AX,0
+
+ MOV AL,QTY1
+ MUL TEN
+ ADD AL,QTY2
+
+ MUL P7
+
+ MOV TTODPRC1,AL
+
+ DIV TEN
+ 
+ MOV Q1,AL
+ MOV R1,AH
+
+ MOV AX,0
+ MOV AL,Q1
+ DIV TEN
+
+ MOV Q2,AL
+ MOV R2,AH
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+ JMP DISPLAY2
+
+DISPLAY2:
+ MOV AH,09H
+ LEA DX,OP
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,Q2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R1	
+ INT 21H
+ 
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,TTPRC
+ INT 21H
+
+;-----TOTAL PRICE CALCULATION
+TPCALC:
+ MOV AX,0
+ MOV BL,0
+
+ MOV BL,TTODPRC1
+ ADD TTODPRC2,BL
+
+ MOV AL,TTODPRC2
+
+ DIV TEN
+ 
+  MOV Q1,AL
+  MOV R1,AH
+
+  MOV AX,0
+  MOV AL,Q1
+  DIV TEN
+
+  MOV Q2,AL
+  MOV R2,AH
+
+  ADD Q2,30H
+  ADD R2,30H
+  ADD R1,30H
+
+  MOV AH,02H
+  MOV DL,Q2	
+  INT 21H
+
+  MOV AH,02H
+  MOV DL,R2	
+  INT 21H
+
+  MOV AH,02H
+  MOV DL,R1	
+  INT 21H
+
+  MOV AH,09H
+  LEA DX,FLNUM
+  INT 21H
+  JMP CONTINUE2
+
+CONTINUE2:
+ MOV AH,09H
+ LEA DX,CONTINUE
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV DCHOICE2,AL
+
+CHKCONTINUE2:
+ CMP DCHOICE2,"Y"
+ JE RMAINMENU4
+ CMP DCHOICE2,"y"
+ JE RMAINMENU4
+ CMP DCHOICE2,"N"
+ JE GOPAYMENT2
+ CMP DCHOICE2,"n"
+ JE GOPAYMENT2
+ JMP RDMENU2
+
+RDMENU2:
+ MOV AH,09H
+ LEA DX,ERROR3
+ INT 21H
+  
+ MOV AH,09H
+ LEA DX,PRESS2
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP CONTINUE2
+
+RMAINMENU4:
+ JMP MAINMENU
+
+GOPAYMENT2:
+ JMP PYMTPG
+
+;---------------------PAYMENT PAGE---------------------
+PYMTPG:
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+ MOV AH,09H
+ LEA DX,MENU3
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG13
+ INT 21H 
+
+ MOV AH,02H
+ MOV DL,Q2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R1	
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+
+PROMPT5:
+ MOV AH,09H
+ LEA DX,MSG20
+ INT 21H
+
+ MOV AH,01H
+ INT 21H
+ MOV CTN2,AL
+
+CHKCTN2:
+  CMP CTN2,31H
+  JE JHOMEPG
+  CMP CTN2,32H
+  JE PYMT2
+  JNE PROMPT5
+
+JHOMEPG:
+ MOV TTODPRC2,0
+ MOV TOTALOPQ,0
+ MOV TOTALOPR,0
+ MOV TOTALOPQ2,0
+ MOV TOTALOPR2,0
+ JMP HOMEPG  
+
+PYMT2:
+ MOV AH,09H
+ LEA DX,MSG15
+ INT 21H
+
+ MOV AH,0AH
+ LEA DX,PYMT
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG14
+ INT 21H
+ JMP CALCBLC
+
+CALCBLC:
+ MOV AX,0
+
+ SUB PYMT[2],30H
+ SUB Q2,30H
+ MOV AL,PYMT[2]
+ SUB AL,Q2
+ ADD AL,30H
+ MOV BLN,AL
+
+ SUB PYMT[3],30H
+ SUB R2,30H
+ MOV AL,PYMT[3]
+ SUB AL,R2
+ ADD AL,30H
+ MOV BLN2,AL
+
+ SUB PYMT[4],30H
+ SUB R1,30H
+ MOV AL,PYMT[4]
+ SUB AL,R1
+ ADD AL,30H
+ MOV BLN3,AL
+
+ MOV AH,02H
+ MOV DL,BLN
+ INT 21H 
+
+ MOV AH,02H
+ MOV DL,BLN2
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,BLN3
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,MSG18
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP PRINTR
+
+;---RECEIPT
+PRINTR:
+ MOV AH,00
+ MOV AL,02H
+ INT 10H
+
+ MOV AH,09H
+ LEA DX,RECEIPT
+ INT 21H
+
+ ADD Q2,30H
+ ADD R2,30H
+ ADD R1,30H
+
+ MOV AH,02H
+ MOV DL,Q2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R2	
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,R1	
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+  
+ MOV AH,09H
+ LEA DX,RECEIPT2
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,RECEIPT3
+ INT 21H
+ 
+ ADD PYMT[2],30H
+ ADD PYMT[3],30H
+ ADD PYMT[4],30H
+
+ MOV AH,02H
+ MOV DL,PYMT[2]
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,PYMT[3]
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,PYMT[4]
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,RECEIPT2
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,RECEIPT4
+ INT 21H
+
+ MOV AH,02H
+ MOV DL,BLN
+ INT 21H 
+
+ MOV AH,02H
+ MOV DL,BLN2
+ INT 21H  
+
+ MOV AH,02H
+ MOV DL,BLN3
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,FLNUM
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,RECEIPT2
+ INT 21H
+
+ MOV AH,09H
+ LEA DX,RECEIPT5
+ INT 21H
+ 
+ MOV TTODPRC2,0
+ MOV TOTALOPQ,0
+ MOV TOTALOPR,0
+ MOV TOTALOPQ2,0
+ MOV TOTALOPR2,0
+
+ MOV AH,09H
+ LEA DX,MSG19
+ INT 21H
+
+ MOV AH,07H
+ INT 21H
+ JMP HOMEPG
+
+EXIT:
+ MOV AH,4CH
+ INT 21H
+MAIN ENDP 
+ END MAIN
