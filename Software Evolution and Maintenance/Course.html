@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TARUMT</title>
+
+  <!---- Customise Tailwind-->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.4/dist/flowbite.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.4/dist/flowbite.min.css" rel="stylesheet">
+
+  <!----- Google Fonts Link For Icons ----->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <!----- Customise CSS ----->
+  <link rel="stylesheet" type="text/css" href="styles/course.css">
+  <link rel="stylesheet" type="text/css" href="styles/faq.css">
+
+  <!----- Customise JavaScript-->
+  <script src="javascript/course.js"></script>
+  <script type="text/babel" data-presets="es2015,es2016,es2017" src="/javascript/chatbot.js"></script>
+  <script src="/javascript/conversation.js"></script>
+  <script src="../javascript/ip.js"></script>
+  <!-- These provide in-browser transpilation of ES6 JS code to ES5 to support IE11 -->
+  <script src="https://unpkg.com/@babel/polyfill@7.6.0/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<header>
+  <!--------------- Header --------------->
+  <nav class="bg-yellow-100 border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="index.html" class="flex items-center">
+        <img src="images/tarumt.png" class="h-12 mr-3" alt="Tarumt Logo" />
+      </a>
+
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg bg-yellow-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-yellow-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="index.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              <a href="index.html"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                aria-current="page">
+                Home
+              </a>
+          </li>
+          <li>
+            <a href="Course.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              Programme
+            </a>
+          </li>
+          <li>
+            <a href="comparisonTable.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              Compare Course
+            </a>
+          </li>
+          <li>
+            <a href="enrollment.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              Enrollment
+            </a>
+          </li>
+          <li>
+            <a href="Staff_Directory.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              Staff Directory
+            </a>
+          </li>
+          <li>
+            <a href="faq.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="facilities.html"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              aria-current="page">
+              Facilities
+            </a>
+          </li>
+          <li>
+            <a href="Research.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">
+                Research
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--------------- Header --------------->
+</header>
+
+<body>
+  <section
+    class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+    <div class="course-banner">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+        <a href="https://www.youtube.com/watch?v=VbLIvaqQwpY&ab_channel=TARUMT"
+          class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+          <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span
+            class="text-sm font-medium">Select to watch Faculty Video</span>
+          <svg class="w-2.5 h-2.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+        </a>
+        <h1
+          class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white banner-title">
+          Welcome to Faculty of Computing and Information Technology (FOCS)</h1>
+        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200 banner-desc">
+          Riding the
+          digital wave that is sweeping every sector and industry in the age of Industry 4.0, TAR UMT is forging ahead
+          with the establishment of the Centre of Excellence for Big Data Analytics and Artificial Intelligence (CoE) as
+          well as Hero Esports Arena on 12 January 2022.</p>
+
+        <form>
+          <label for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+              </svg>
+            </div>
+            <input type="search" id="default-search"
+              class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search Courses Here..." search-course>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="course-card" course-card-container></div>
+  <template course-select-templete>
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" course-header></h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" course-body></p>
+    </div>
+  </template>
+
+  <!--------------- Chatbot --------------->
+  <div id="chatbot-div">
+
+    <!--------------- Chatbot Button --------------->
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <main id="main" class="chatbot">
+      <div id="chatbot-container">
+        <div id="chatbot-inner">
+          <div id="chatbot"></div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+  <!--------------- Chatbot --------------->
+
+</body>
+<footer class="bg-gray-100">
+  <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2">
+
+        <!----- TARUMT Logo ----->
+        <a href="https://www.tarc.edu.my/focs/index.jsp" aria-label="Go home" title="Company"
+          class="inline-flex items-center">
+          <img src="images/tarumt.png" class="h-12 mr-3" alt="Tarumt Logo" />
+        </a>
+        <!----- Faculty ----->
+        <div class="mt-6 lg:max-w-sm">
+          <p class="text-sm text-gray-800">
+            FACULTY OF COMPUTING AND INFORMATION TECHNOLOGY
+          </p>
+        </div>
+
+        <br />
+
+        <!----- Social ----->
+        <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+        <div class="flex items-center mt-1 space-x-5">
+          <a href="https://www.youtube.com/channel/UCqjsPpVnwjCRT5mgAgFo1ng"
+            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-youtube"
+              viewBox="0 0 16 16">
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/tarumt.official/"
+            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400" target="_blank">
+            <svg viewBox="0 0 30 30" fill="currentColor" class="h-9">
+              <circle cx="15" cy="15" r="4"></circle>
+              <path
+                d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z">
+              </path>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/tarumtkl"
+            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-7">
+              <path
+                d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-sm">
+        <p class="text-base font-bold tracking-wide text-gray-900">Contacts</p>
+
+        <!----- Phone ----->
+        <div class="flex">
+          <p class="mr-1 text-gray-800">Phone:</p>
+          <p>850-123-5021</p>
+        </div>
+
+        <!----- Mobile Phone ----->
+        <div class="flex">
+          <p class="mr-1 text-gray-800">Mobile Phone:</p>
+          <p>6011-10758554</p>
+        </div>
+
+        <!----- FAX ----->
+        <div class="flex">
+          <p class="mr-1 text-gray-800">Fax:</p>
+          <p>603-41423166 / 018925 1001</p>
+        </div>
+
+        <!----- Email ----->
+        <div class="flex">
+          <p class="mr-1 text-gray-800">Email:</p>
+          <p>focs@tarc.edu.my</p>
+        </div>
+
+        <br />
+
+        <!----- Opening Hour ----->
+        <div class="flex">
+          <p class="text-sm text-gray-800">
+            <span class="font-bold">OPENING HOURS</span> <br />
+            8.30am - 5.30pm (Monday - Friday)
+          </p>
+        </div>
+
+      </div>
+
+      <div>
+        <!----- Google Map ----->
+        <span class="text-base font-bold tracking-wide text-gray-900">Map To TARUMT</span>
+        <br />
+        <div class="mapouter">
+          <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
+              marginheight="0" marginwidth="0"
+              src="https://maps.google.com/maps?width=300&amp;height=200&amp;hl=en&amp;q=Ground Floor, Bangunan Tan Sri Khaw Kai Boh (Block A), Jalan Genting Kelang, Setapak, 53300 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+              href="https://gachanymph.com/">Gacha Nymph APK</a></div>
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              width: 100%;
+              height: 200px;
+            }
+
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              width: 100%;
+              height: 200px;
+            }
+
+            .gmap_iframe {
+              height: 200px !important;
+            }
+          </style>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!----- Copyright ----->
+    <div class="pt-5 pb-10 border-t">
+      <p class="text-sm text-gray-600 text-center">
+      © Copyright 2023 All rights reserved for SEM Assignment
+      </p>
+      <div id="ip-address-display" class="text-sm text-gray-500 text-center mt-4"></div>
+    </div>
+  </div>
+</footer>
+
+</html>

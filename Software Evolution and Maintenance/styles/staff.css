@@ -1,0 +1,27 @@
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.99)), url("../images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#controlsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#itemsPerPageSelectlist {
+    margin-left: auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+}

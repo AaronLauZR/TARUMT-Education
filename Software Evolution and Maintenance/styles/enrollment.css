@@ -1,0 +1,18 @@
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.99)), url("../images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container {
+  background-color: #f1f1f1cb;
+  /* padding-left: 30px; */
+  padding-top: 1px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  width: 90%;
+  /* color: white; */
+}

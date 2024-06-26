@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARUMT</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!----- Link to fontawesome ----->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!----- Google Fonts Link For Icons ----->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!----- Customise CSS ----->
+    <link rel="stylesheet" type="text/css" href="styles/faq.css">
+
+    <!----- Customise Javascript ----->
+    <script type="text/babel" data-presets="es2015,es2016,es2017" src="/javascript/chatbot.js"></script>
+    <script src="/javascript/conversation.js"></script>
+    <script src="../javascript/ip.js"></script>
+    <!-- These provide in-browser transpilation of ES6 JS code to ES5 to support IE11 -->
+    <script src="https://unpkg.com/@babel/polyfill@7.6.0/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+</head>
+
+<header>
+    <!--------------- Header --------------->
+    <nav class="bg-yellow-100 border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="index.html" class="flex items-center">
+                <img src="images/tarumt.png" class="h-12 mr-3" alt="Tarumt Logo" />
+            </a>
+
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg bg-yellow-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-yellow-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">
+                        <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Course.html"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">
+                            Programme
+                        </a>
+                    </li>
+                    <li>
+                        <a href="comparisonTable.html"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">
+                            Compare Course
+                        </a>
+                    </li>
+                    <li>
+                        <a href="enrollment.html"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">
+                            Enrollment
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Staff_Directory.html"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">
+                            Staff Directory
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq.html"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="facilities.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">
+                            Facilities
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Research.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">
+                            Research
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--------------- Header --------------->
+</header>
+
+<body>
+
+    <!--------------- Banner --------------->
+    <div class="banner" style="width: auto; height: 400px; line-height: 400px; text-align: center;">
+        <h1 style="margin: auto; color: white; font-size: 50px; display: inline-block; font-weight: bold;">FAQ</h1>
+    </div>
+
+
+    <div class="container my-5 mx-auto md:px-6 xl:px-24">
+
+        <!--------------- FAQ --------------->
+        <section class="bg-white dark:bg-gray-900">
+            <div class="container max-w-4xl px-6 py-10 mx-auto">
+
+                <h1 class="text-3xl font-bold text-center text-gray-800 lg:text-3xl dark:text-white">Frequently asked questions</h1>
+        
+                <br><br>
+
+                <!--------------- FAQ Dropdown option --------------->
+                <div class="relative inline-block text-left">
+                    <div>
+                        <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="false" aria-haspopup="true">
+                            <p id="menu-text">Intakes and Programmes</p>
+                            <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" id="dropdown-content" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <div class="py-1" role="none">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <p class="text-gray-700 block px-4 py-2 text-sm hover:text-blue-700" role="menuitem" tabindex="-1" id="menu-item-0" style="cursor: pointer;" onclick="changeButtonText('Intakes and Programmes')">Intakes and Programmes</p>
+                        <p class="text-gray-700 block px-4 py-2 text-sm hover:text-blue-700" role="menuitem" tabindex="-1" id="menu-item-1" style="cursor: pointer;" onclick="changeButtonText('Application')">Application</p>
+                        <p class="text-gray-700 block px-4 py-2 text-sm hover:text-blue-700" role="menuitem" tabindex="-1" id="menu-item-2" style="cursor: pointer;" onclick="changeButtonText('Entry Requirements')">Entry Requirements</p>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------- FAQ (Intakes and Programmes) --------------->
+                <div class="mt-5 space-y-8" id="content-to-toggle-1">
+
+                    <!--------------- FAQ Question 1 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question1', 'icon1')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">1. What are the programmes offered by FOCS?</h1>
+                            
+                            <span id="icon1" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question1" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                FOCS offers the Bachelor Degree and Diploma programmes 
+                                 <br/><br />
+                                If you want to compare the course, please click
+                                <a href="comparisonTable.html" style="text-decoration: underline; color: blue;" target="_blank">here</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 2 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question2', 'icon2')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">2. When are TAR UMT intakes?</h1>
+                            
+                            <span id="icon2" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question2" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                Our intakes are in February, June, October and November. <br /><br />
+                                The June Intake is the Main Intake.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 3 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question3', 'icon3')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">3. How many TAR UMT campuses are there?</h1>
+                            
+                            <span id="icon3" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question3" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                TAR UMT has 6 campuses; Kuala Lumpur, Penang, Perak, Johor, Pahang and Sabah.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 4 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question4', 'icon4')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">4. How many semesters are there in a year?</h1>
+                            
+                            <span id="icon4" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question4" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                There are two long semesters and one short semester in a year.
+                            </p>
+                        </div>
+                    </div>
+        
+                </div>
+                <!--------------- FAQ (Intakes and Programmes) --------------->
+
+
+                <!--------------- FAQ (Application) --------------->
+                <div class="mt-5 space-y-8" id="content-to-toggle-2">
+
+                    <!--------------- FAQ Question 5 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question5', 'icon5')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">1. What are the documents needed to apply?</h1>
+                            
+                            <span id="icon5" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question5" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                You are required to upload your MyKad (front and back), SPM/O Level/STPM/A Level/UEC/equivalent results and other relevant documents (where applicable)
+                                <br/><br />
+                                The documents you have to upload will be stated in the online application.
+                                <br/><br />
+                                All documents uploaded must be <u>clear and scanned/snapped from the original documents and in colour.</u>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 6 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question6', 'icon6')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">2. I am a student from another institution of higher learning. Are there any additional documents to submit?</h1>
+                            
+                            <span id="icon6" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question6" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                The additional documents to be uploaded include Certificate Award/completion letter/letter on your current student status, official transcripts/semester examination results, programme structure, syllabi/course outline.
+                                <br /><br />
+                                The documents you have to upload will be stated in the online application.
+                                <br /><br />
+                                All documents uploaded must be <u>clear and scanned/snapped from the original documents and in colour.</u>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 7 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question7', 'icon7')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">3. Is there any fee to pay for the online application?</h1>
+                            
+                            <span id="icon7" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question7" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                Yes, the processing fee for online application is RM 60.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 8 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question8', 'icon8')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">4. When is the application closing date?</h1>
+                            
+                            <span id="icon8" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question8" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                Application is on a first-come, first-served basis. 
+                                <br /><br />
+                                You are advised to apply early before the commencement date of the Intake.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 9 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question9', 'icon9')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">5. Will I be informed if my application is incomplete?></h1>
+                            
+                            <span id="icon9" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question9" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                Applicants will be informed via e-mail to upload the relevant documents which are not clear before their applications can be processed. 
+                            </p>
+                        </div>
+                    </div>
+        
+                </div>
+                <!--------------- FAQ (Application) --------------->
+
+
+                <!--------------- FAQ (Entry Requirement) --------------->
+                <div class="mt-5 space-y-8" id="content-to-toggle-3">
+
+                    <!--------------- FAQ Question 10 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question10', 'icon10')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">1. What are the entry requirements for the programmes?</h1>
+                            
+                            <span id="icon10" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question10" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                <b>The general minimum entry requirements are as follows:-</b>
+                            </p>
+                            <br />
+                            
+                            <ul style="list-style: circle;">
+                                <li>
+                                    <p><u>Diploma</u></p>
+                                    <p>SPM with 3 credits / O Level with 3 Grade C / UEC with 3 Grade B or equivalent qualification</p>
+                                </li>
+                                <br />
+                                <li>
+                                    <p><u>Bachelor Degree</u></p>
+                                    <p>STPM with 2 principal pass / A Level with 2 Grade D / UEC with 5 Grade B or equivalent qualification</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 11 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question11', 'icon11')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">2. I have UEC and am on the Bachelor of Software Engineering (Hons) programme. However, I do not have Malaysian University English Test (MUET)/IELTS/equivalent?</h1>
+                            
+                            <span id="icon11" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question11" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                <b>Applicants with UEC keen in joining any of the following Bachelor Degree programmes must meet the MUET/IELTS entry requirement as follows:-</b>
+                            </p>
+                            <br />
+                            
+                            <ul style="list-style: circle;">
+                                <li>
+                                    <p>Accounting/Commerce - minimum Band 2/Band Score 3.0</p>
+                                </li>
+                                <li>
+                                    <p>Nutrition - minimum Band 3/Band Score 4.0</p>
+                                </li>
+                                <li>
+                                    <p>English with Drama/English with Education/English Studies - minimum Band 4/Band Score 6.0</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 12 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question12', 'icon12')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">3. Besides MUET/IELTS, is there any other English Proficiency test that I can do?</h1>
+                            
+                            <span id="icon12" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question12" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                <b>Yes, you can do the Cambridge Linguaskill and obtain the following minimum score to meet the entry requirements:-</b>
+                            </p>
+                            <br />
+                            
+                            <ul style="list-style: circle;">
+                                <li>
+                                    <p>Accounting/Commerce - minimum score of 127</p>
+                                </li>
+                                <li>
+                                    <p>Nutrition - minimum score of 140</p>
+                                </li>
+                                <li>
+                                    <p>English with Drama/English with Education/English Studies - minimum score of 169</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 13 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question13', 'icon13')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">4. My results meet the minimum entry requirements for the programme. Will I be offered the programme that I apply for?</h1>
+                            
+                            <span id="icon13" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question13" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                Your results must first meet the minimum entry requirements of the programme in order to be considered for admission.  
+                                <br /><br />
+                                However, for certain programmes, besides meeting the minimum entry requirements, applicants must also have good results (including passing the portfolio test/interview, where applicable)
+                                <br /><br />
+                                Offer of admission is based on academic merit, order of choice of programme and availability of vacancies in the programme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--------------- FAQ Question 14 --------------->
+                    <div class="border-2 border-gray-100 rounded-lg dark:border-gray-700">
+                        <button class="flex items-center justify-between w-full p-8" onclick="toggleDropdown('question14', 'icon14')">
+                            <h1 class="font-semibold text-gray-700 dark:text-white">5. Are TAR UMT programmes accredited by MQA?</h1>
+                            
+                            <span id="icon14" class="text-white bg-blue-500 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="question14" class="hidden p-8 text-sm text-gray-500 dark:text-gray-300">
+                            <p>
+                                Yes, our programmes are accredited by MQA.
+                            </p>
+                        </div>
+                    </div>
+        
+                </div>
+                <!--------------- FAQ (Entry Requirement) --------------->
+
+
+            </div>
+        </section>
+
+    </div>
+
+    <!--------------- Chatbot --------------->
+    <div id="chatbot-div">
+
+        <!--------------- Chatbot Button --------------->
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined">mode_comment</span>
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <main id="main" class="chatbot">
+            <div id="chatbot-container">
+                <div id="chatbot-inner">
+                    <div id="chatbot"></div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <!--------------- Chatbot --------------->
+
+</body>
+
+<footer class="bg-gray-100">
+    <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="sm:col-span-2">
+
+                <!----- TARUMT Logo ----->
+                <a href="https://www.tarc.edu.my/focs/index.jsp" aria-label="Go home" title="Company" class="inline-flex items-center">
+                    <img src="images/tarumt.png" class="h-12 mr-3" alt="Tarumt Logo" />
+                </a>
+                <!----- Faculty ----->
+                <div class="mt-6 lg:max-w-sm">
+                    <p class="text-sm text-gray-800">
+                    FACULTY OF COMPUTING AND INFORMATION TECHNOLOGY
+                    </p>
+                </div>
+
+                <br />
+
+                <!----- Social ----->
+                <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+                <div class="flex items-center mt-1 space-x-5">
+                    <a href="https://www.youtube.com/channel/UCqjsPpVnwjCRT5mgAgFo1ng" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16"> <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/> </svg>
+                    </a>
+                    <a href="https://www.instagram.com/tarumt.official/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400" target="_blank">
+                    <svg viewBox="0 0 30 30" fill="currentColor" class="h-9">
+                        <circle cx="15" cy="15" r="4"></circle>
+                        <path
+                        d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"
+                        ></path>
+                    </svg>
+                    </a>
+                    <a href="https://www.facebook.com/tarumtkl" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="h-7">
+                        <path
+                        d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                        ></path>
+                    </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-2 text-sm">
+                <p class="text-base font-bold tracking-wide text-gray-900">Contacts</p>
+
+                <!----- Phone ----->
+                <div class="flex">
+                    <p class="mr-1 text-gray-800">Phone:</p>
+                    <p>850-123-5021</p>
+                </div>
+
+                <!----- Mobile Phone ----->
+                <div class="flex">
+                    <p class="mr-1 text-gray-800">Mobile Phone:</p>
+                    <p>6011-10758554</p>
+                </div>
+                
+                <!----- FAX ----->
+                <div class="flex">
+                    <p class="mr-1 text-gray-800">Fax:</p>
+                    <p>603-41423166 / 018925 1001</p>
+                </div>
+
+                 <!----- Email ----->
+                <div class="flex">
+                    <p class="mr-1 text-gray-800">Email:</p>
+                    <p>focs@tarc.edu.my</p>
+                </div>
+
+                <br />
+
+                <!----- Opening Hour ----->
+                <div class="flex">
+                    <p class="text-sm text-gray-800">
+                    <span class="font-bold">OPENING HOURS</span> <br />
+                    8.30am - 5.30pm (Monday - Friday)
+                    </p>
+                </div>
+
+            </div>
+
+            <div>
+                <!----- Google Map ----->
+                <span class="text-base font-bold tracking-wide text-gray-900">Map To TARUMT</span>
+                <br />
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=200&amp;hl=en&amp;q=Ground Floor, Bangunan Tan Sri Khaw Kai Boh (Block A), Jalan Genting Kelang, Setapak, 53300 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+                        </iframe>
+                        <a href="https://gachanymph.com/">Gacha Nymph APK</a>
+                    </div>
+                    <style>.mapouter{position:relative;text-align:right;width:100%;height:200px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:200px;}.gmap_iframe {height:200px!important;}</style></div>
+
+            </div>
+
+        </div>
+
+        <!----- Copyright ----->
+        <div class="pt-5 pb-10 border-t">
+            <p class="text-sm text-gray-600 text-center">
+            © Copyright 2023 All rights reserved for SEM Assignment
+            </p>
+            <div id="ip-address-display" class="text-sm text-gray-500 text-center mt-4"></div>
+        </div>
+
+            
+    </div>
+</footer>
+
+</html>
+
+<script>
+    // FAQ Toggle Dropdown
+    function toggleDropdown(contentId, iconId) {
+        const content = document.getElementById(contentId);
+        const icon = document.getElementById(iconId);
+        content.classList.toggle('hidden');
+        icon.classList.toggle('bg-blue-500');
+        icon.classList.toggle('bg-gray-400');
+        
+        if (content.classList.contains('hidden')) {
+            // Set the icon to the closed state
+            icon.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+            `;
+        } else {
+            // Set the icon to the open state
+            icon.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                </svg>
+            `;
+        }
+    }
+
+    // FAQ Selection Dropdown
+    const menuButton = document.getElementById('menu-button');
+    const menuText = document.getElementById('menu-text');
+    const dropdownContent = document.getElementById('dropdown-content');
+
+    // Toggle dropdown visibility when the button is clicked
+    menuButton.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+
+        // Toggle the "hidden" class to show/hide the dropdown content
+        dropdownContent.classList.toggle('hidden', !expanded);
+
+        // Update the "aria-expanded" attribute to reflect the new state
+        menuButton.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Close the dropdown when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (!menuButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownContent.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Change FAQ dropdown option name
+    function changeButtonText(newText) {
+        if (newText) {
+            menuText.textContent = newText;
+        }
+    }
+
+    // Function to toggle the visibility of the div
+    function toggleContentVisibility1(show) {
+        const contentDiv = document.getElementById('content-to-toggle-1');
+        if (contentDiv) {
+            contentDiv.style.display = show ? 'block' : 'none';
+        }
+    }
+
+    function toggleContentVisibility2(show) {
+        const contentDiv = document.getElementById('content-to-toggle-2');
+        if (contentDiv) {
+            contentDiv.style.display = show ? 'block' : 'none';
+        }
+    }
+
+    function toggleContentVisibility3(show) {
+        const contentDiv = document.getElementById('content-to-toggle-3');
+        if (contentDiv) {
+            contentDiv.style.display = show ? 'block' : 'none';
+        }
+    }
+
+    // Add an event listener to the menu item that should toggle the div
+    document.getElementById('menu-item-0').addEventListener('click', function() {
+        // Show the div when the menu item is clicked
+        toggleContentVisibility1(true);
+        toggleContentVisibility2(false);
+        toggleContentVisibility3(false);
+    });
+
+    document.getElementById('menu-item-1').addEventListener('click', function() {
+        // Show the div when the menu item is clicked
+        toggleContentVisibility1(false);
+        toggleContentVisibility2(true);
+        toggleContentVisibility3(false);
+    });
+
+    document.getElementById('menu-item-2').addEventListener('click', function() {
+        // Show the div when the menu item is clicked
+        toggleContentVisibility1(false);
+        toggleContentVisibility2(false);
+        toggleContentVisibility3(true);
+    });
+
+    // Default FAQ dropdown option 
+    toggleContentVisibility2(false);
+    toggleContentVisibility3(false);
+    
+</script>
+

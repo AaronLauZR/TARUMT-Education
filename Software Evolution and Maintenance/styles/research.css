@@ -1,0 +1,4 @@
+.banner-research {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.7)), url("../images/Research_Banner.jpg");
+    background-size: cover;
+}
