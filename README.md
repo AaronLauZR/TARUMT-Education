@@ -1,4 +1,4 @@
-# Tunku Abdul Rahman University of Management and Technology (TAR UMT)
+# Tunku Abdul Rahman University of Management and Technology (TARUMT)
 Y1S1
 - Problem Solving and Programming (C++)
 - Introduction to Computer Systems (Assembly Language)
