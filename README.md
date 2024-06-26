@@ -14,7 +14,7 @@ Y2S1
 
 Y2S3
 - Artificial Intelligence (Python)
-- Web Application Development (ASP.NET & C)
+- Web Application Development (ASP.NET & CSS & C)
 
 Y3S1
 - Software Evolution and Maintenance (HTML & CSS & JavaScript)
