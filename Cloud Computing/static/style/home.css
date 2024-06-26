@@ -1,0 +1,48 @@
+.nav-borderline {
+    border-bottom: 3px solid darkblue;
+}
+
+.home-header {
+    padding: 180px;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #D1FFBD, #d5ffff);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-image-container {
+    flex: 1;
+    padding: 10px;
+    text-align: right;
+}
+
+.about-image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-text-container {
+    flex: 1;
+    padding: 40px;
+    padding-right: 80px;
+}
+
+.about-text-title {
+    margin-bottom: 20px;
+}
+
+.about-img {
+    border-radius: 50px;
+}
+
+.home-button {
+    margin-top: 30px;
+}
