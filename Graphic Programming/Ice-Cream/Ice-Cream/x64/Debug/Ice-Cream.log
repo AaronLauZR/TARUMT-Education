@@ -1,0 +1,8 @@
+﻿  Ice-Cream.cpp
+C:\Users\Window\source\repos\Ice-Cream\Ice-Cream\Ice-Cream.cpp(136,34): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\Window\source\repos\Ice-Cream\Ice-Cream\Ice-Cream.cpp(146,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Window\source\repos\Ice-Cream\Ice-Cream\Ice-Cream.cpp(176,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Window\source\repos\Ice-Cream\Ice-Cream\Ice-Cream.cpp(183,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Window\source\repos\Ice-Cream\Ice-Cream\Ice-Cream.cpp(190,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Window\source\repos\Ice-Cream\Ice-Cream\Ice-Cream.cpp(197,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Ice-Cream.vcxproj -> C:\Users\Window\source\repos\Ice-Cream\x64\Debug\Ice-Cream.exe
