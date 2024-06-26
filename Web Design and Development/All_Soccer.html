@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoer</title>
+    <link rel="shortcut icon" href="image/icon_shoerlogo.ico?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="contentstyle.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <ul class="side_by_side">
+        <li id="header_logo" >
+          <a href="index.html">
+            <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+          </a>
+        </li>
+        <li id="header_name"><h1>Shoer Sports</h1></li>
+        <li style="padding: 5px 15px;" class="new-element"></li>
+        <li style="padding: 5px 15px;">
+          <a href="ContactUs.html">Contact Us</a>
+        </li> 
+        <li style="padding: 5px 15px;" class="old-element">
+          <a href="login.html">Login</a>
+        </li>
+        <li style="padding: 5px 15px;">
+          <a href="register.html">Sign Up</a>
+        </li>
+
+      </ul>
+      
+      <script>
+      let formData = localStorage.getItem('formData');
+      if( formData ) {
+        let storedNames = JSON.parse(localStorage.getItem("names"));
+        let displayName = document.querySelector('.new-element');
+        displayName.innerHTML += 
+        `<li class="new-element">
+          Hi, ${storedNames}
+        </li>`;
+        const listItem = document.querySelector("li:nth-child(5)");
+        const newItem = document.createElement('li');
+        newItem.innerHTML = '<li style="padding: 5px 15px"><a href="login.html">Log Out</a></li>';
+        listItem.parentNode.replaceChild(newItem, listItem);
+      }
+      </script>
+    </header>
+  
+    <!-- navigation bar -->
+    <nav>
+      <div class="nav-bar">
+        <ul class="nav-links">
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li>
+            <a href="#">All Products</a>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <header><a href="All_Basketball.html">Basketball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Basketball_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Basketball_Shoes.html">Shoes</a></li>
+                    <li><a href="Basketball_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Volleyball.html">Volleyball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Volleyball_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Volleyball_Shoes.html">Shoes</a></li>
+                    <li><a href="Volleyball_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Soccer.html">Soccer</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Soccer_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Soccer_Shoes.html">Shoes</a></li>
+                    <li><a href="Soccer_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Pingpong.html">Pingpong</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Pingpong_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Pingpong_Shoes.html">Shoes</a></li>
+                    <li><a href="Pingpong_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li><a href="promotion.html">Promotion</a></li>
+          <li class="cart">
+            <a href="cart.html">
+                  <ion-icon name="basket"></ion-icon>Cart(<span>0</span>)
+            </a>
+         </li>               
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="product_divison">
+      <!-- product -->
+    <main class="background allproduct">
+      <div class="left" id="left">
+        <h2>Product Search</h2>
+        <div class="search-box">
+          <form action="" onsubmit="return false">
+            <input type="text" id="search" placeholder="Search Product.." title="Type in product categories">
+          </form>
+        </div>
+        <br>
+        <h2>Product categories</h2>
+        <div class="filter-box">
+          <a href="#" class="btn active" data-filter="all">All</a>
+          <a href="#" class="btn" data-filter="top&bottom">Top & bottom</a> 
+          <a href="#" class="btn" data-filter="shoes"> Shoes </a> 
+          <a href="#" class="btn" data-filter="accessories">Accessories</a>
+        </div>
+      </div>
+      
+      <div class="right">
+        <h1 style="padding-top:10px;">Soccer</h1>
+        <div style=" background-color: #12e7cb; height: 30px;"></div>
+        <br>
+
+        <section class="container" id="store-products">
+
+          <div class="store-product top&bottom" id="volley1">
+            <img src="soccer_image/soccer_clothes1.jpg" alt="Man Chester Tee" id="product-image" >
+            <div class="product-details">
+              <h3>Man Chester Tee <br> (red available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 3 day
+                <br><br> 
+                Price: RM 139.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="store-product top&bottom" id="volley2">
+            <img src="soccer_image/soccer_bottom1.jpg" alt="F100 Adult Football Sports" id="product-image" >
+            <div class="product-details">
+              <h3>F100 Adult Football Sports <br> (black available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 3 day
+                <br><br> 
+                Price:    RM 19.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="store-product top&bottom" id="volley3">
+            <img src="soccer_image/soccer_bottom2.jpg" alt="F500 Adult Football Shorts " id="product-image" >
+            <div class="product-details">
+              <h3>F500 Adult Football Shorts <br>(black available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 3 day
+                <br><br> 
+                Price:    RM 29.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="store-product top&bottom" id="volley4">
+            <img src="soccer_image/soccer_bottom3.jpg" alt="Manchester United Tiro Training Pants" id="product-image" >
+            <div class="product-details">
+              <h3>Manchester United Tiro Training Pants </h3>
+              <div class="col-2-3 price">
+                Delivery: 3 day
+                <br><br> 
+                Price: RM 29.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="store-product shoes" id="volley5">
+            <img src="soccer_image/soccer_shoes1.jpg" alt="S594 Soccer Sport Shoes" id="product-image" style="width: 100%; padding-left: 0;">
+            <div class="product-details">
+              <h3>S594 Soccer Sport Shoes <br> (black/green available)
+              </h3>
+              <div class="col-2-3 price">
+                Delivery: 5 day
+                <br><br> 
+                Price:    RM 245.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="store-product shoes" id="volley6">
+            <img src="soccer_image/soccer_shoes2.jpg" alt="W283 Soccer Sports Shoes" id="product-image" style="padding-left: 0; width: 100%;">
+            <div class="product-details">
+              <h3>W283 Soccer Sports Shoes <br>(white available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 3 day
+                <br><br> 
+                Price:    RM 175.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="store-product shoes" id="volley7">
+            <img src="soccer_image/soccer_shoes3.jpg" alt="Solid Rock Soccer Shoes" id="product-image" style="padding-left: 0; width: 100%; height: 200px; margin-top: 8%; margin-bottom: 8%;">
+            <div class="product-details">
+              <h3>Solid Rock Soccer Shoes <br>(Black available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 4 day
+                <br><br> 
+                Price: RM 360.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="store-product accessories" id="volley8">
+            <img src="soccer_image/soccer_a1.jpg" alt="Sg 500 football goal size m" id="product-image" >
+            <div class="product-details">
+              <h3>Sg 500 football goal size m <br>(black/orange available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 7 day
+                <br><br> 
+                Price:    RM 249.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="store-product accessories" id="volley9">
+            <img src="soccer_image/soccer_a2.jpg" alt="Essential football training flat markers 10-pack" id="product-image" >
+            <div class="product-details">
+              <h3>Essential football training flat markers 10-pack</h3>
+              <div class="col-2-3 price">
+                Delivery: 2 day
+                <br><br> 
+                Price:    RM 29.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="store-product accessories" id="volley10">
+            <img src="soccer_image/soccer_a3.jpg" alt="55L sports bag essential" id="product-image" >
+            <div class="product-details">
+              <h3>55L sports bag essential <br>(black available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 4 day
+                <br><br> 
+                Price:    RM 49.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="store-product accessories" id="volley11">
+            <img src="soccer_image/soccer_a4.jpg" alt="UCL CLUB PYROSTORM BALL" id="product-image" >
+            <div class="product-details">
+              <h3>UCL CLUB PYROSTORM BALL <br>(white/orange available)</h3>
+              <div class="col-2-3 price">
+                Delivery: 3 day
+                <br><br> 
+                Price:    RM 79.00
+              </div>
+              <div class="col-1-3 cart-box">
+                <img src="image/shopping_icon.png" alt="Add to Cart" id="add-to-cart" align="right">
+                <span class="tooltiptext">More Info</span>
+              </div>
+            </div>
+          </div>
+        
+        </section>
+        
+        <br><br><br><br>
+
+        <div id="modal1">
+          <span class="close">&times;</span>
+          <div class="productA" id="modalVolley1">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_clothes1.jpg" alt="Man Chester Tee" > <br>
+              <img src="image/star_3star.jfif" alt="3star">
+            </div>
+            <div class="col-2-3">
+              <h1>Man Chester Tee</h1>
+              <span>Price: RM 139 </span>
+              <span>Delivery: 3days</span> <br><br>
+              Highlights: <br>
+              <ol>
+                <li>Size available  :  S/M/L/XL/</li>
+                <li>Color available : Red/Blue/Black</li>
+                <li>Suitable for    : Adult Man</li>
+                <li>Last Long       : 3 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+        
+        <script>
+        var modal = document.getElementById("modal1")
+        var product = document.getElementById("volley1")
+        var modalProduct = document.getElementById("modalVolley1")
+        product.onclick = function(){
+          modal.style.display = "block";
+          modalProduct.src = this.src;
+        }
+        var span = document.getElementsByClassName('close')[0];
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        </script>
+        
+        <div id="modal2">
+          <span class="close2">&times;</span>
+          <div class="productA" id="modalVolley2">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_bottom1.jpg" alt="soccer_image/soccer_bottom1.jpg" > <br>
+              <img src="image/star_4star.jfif" alt="4star">
+            </div>
+            <div class="col-2-3">
+              <h1>F100 Adult Football Shorts</h1>    
+              <span>Price: RM 19.00 </span>    
+              <span>Delivery: 3days</span> <br><br>       
+              Highlights: <br>        
+              <ol>                       
+                <li>SIZE AVAILABLE  : M/L/XL</li>
+                <li>COLOR AVAILABLE : Black/ Grey</li>
+                <li>SUITABLE FOR  : Adult Man</li>
+                <li>LAST LONG : 5 years if good care</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+      
+        <script>
+        var modal2 = document.getElementById("modal2")
+        var product2 = document.getElementById("volley2")
+        var modalProduct2 = document.getElementById("modalVolley2")
+        product2.onclick = function(){
+          modal2.style.display = "block";
+          modalProduct2.src = this.src;
+        }
+        var span2 = document.getElementsByClassName('close2')[0];
+        span2.onclick = function() {
+          modal2.style.display = "none";
+        }
+        </script>
+        
+        <div id="modal3">
+          <span class="close3">&times;</span>
+          <div class="productA" id="modalVolley3">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_bottom2.jpg" alt="F500 Adult Football Shorts" > <br>
+              <img src="image/star_3star.jfif" alt="3star">
+            </div>
+            <div class="col-2-3">
+              <h1>F500 Adult Football Shorts</h1>
+              <span>Price: RM 29.00 </span>
+              <span>Delivery: 3days</span> <br><br>
+              Highlights: <br>
+              <ol>
+                <li>Siza Available: S/M/L/XL</li>
+                <li>Color available: Black/ Grey</li>
+                <li>Suitable for: Adult man</li>
+                <li>Last long: 3 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+        
+        <script>
+        var modal3 = document.getElementById("modal3")
+        var product3 = document.getElementById("volley3")
+        var modalProduct3 = document.getElementById("modalVolley3")
+        product3.onclick = function(){
+          modal3.style.display = "block";
+          modalProduct3.src = this.src;
+        }
+        var span3 = document.getElementsByClassName('close3')[0];
+        span3.onclick = function() {
+          modal3.style.display = "none";
+        }
+        </script>
+        
+        <div id="modal4">
+          <span class="close4">&times;</span>
+          <div class="productA" id="modalVolley4">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_bottom3.jpg" alt="Manchester United Tiro Training Pants" > <br>
+              <img src="image/star_3star.jfif" alt="3star">
+            </div>
+            <div class="col-2-3">
+              <h1>Manchester United Tiro Training Pants</h1>
+              <span>Price: RM 29.00 </span>
+              <span>Delivery: 3days</span> <br><br>
+              Highlights: <br>
+              <ol>
+                <li>Siza Available: S/M//XL</li>
+                <li>Color available: Black/ Grey/ White</li>
+                <li>Suitable for: Adult man</li>
+                <li>Last long: 4 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+        
+        <script>
+          var modal4 = document.getElementById("modal4")
+          var product4 = document.getElementById("volley4")
+          var modalProduct4 = document.getElementById("modalVolley4")
+
+          product4.onclick = function(){
+            modal4.style.display = "block";
+            modalProduct4.src = this.src;
+          }
+
+          var span4 = document.getElementsByClassName('close4')[0];
+
+          span4.onclick = function() {
+            modal4.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal5">
+          <span class="close5">&times;</span>
+          <div class="productA" id="modalVolley5">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_shoes1.jpg" alt="S594 Soccer Sport Shoes" style="height: 345px;"> <br>
+              <img src="image/star_4star.jfif" alt="4star">
+            </div>
+            <div class="col-2-3">
+              <h1>S594 Soccer Sport Shoes</h1>
+              <span>Price: RM 245.00 </span>
+              <span>Delivery: 5days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Siza Available: S/M/L/XL</li>
+                <li>Color available: Black/ Green, Black/Blue</li>
+                <li>Suitable for: Adult man</li>
+                <li>Last long: 5 years if good care</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>  
+          </div>
+        </div>
+        
+        <script>
+          var modal5 = document.getElementById("modal5")
+          var product5 = document.getElementById("volley5")
+          var modalProduct5 = document.getElementById("modalVolley5")
+    
+          product5.onclick = function(){
+            modal5.style.display = "block";
+            modalProduct5.src = this.src;
+          }
+    
+          var span5 = document.getElementsByClassName('close5')[0];
+    
+          span5.onclick = function() {
+            modal5.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal6">
+          <span class="close6">&times;</span>
+          <div class="productA" id="modalVolley6">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_shoes2.jpg" alt="W283 Soccer Sports Shoes" style="height: 345px;"> <br>
+              <img src="image/star_4star.jfif" alt="4star">
+            </div>
+            <div class="col-2-3">
+              <h1>W283 Soccer Sports Shoes</h1>
+              <span>Price: RM 175.00 </span>
+              <span>Delivery: 3days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Siza Available: S/M/L/XL</li>
+                <li>Color available: White/ Lightblue</li>
+                <li>Suitable for: Adult man</li>
+                <li>Last long: 6 years if good care</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+        
+        <script>
+          var modal6 = document.getElementById("modal6")
+          var product6 = document.getElementById("volley6")
+          var modalProduct6 = document.getElementById("modalVolley6")
+    
+          product6.onclick = function(){
+            modal6.style.display = "block";
+            modalProduct6.src = this.src;
+          }
+    
+          var span6 = document.getElementsByClassName('close6')[0];
+    
+          span6.onclick = function() {
+            modal6.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal7">
+          <span class="close7">&times;</span>
+          <div class="productA" id="modalVolley7">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_shoes3.jpg" alt="Solid Rock Soccer Shoes" style="height: 200px; margin-top: 25%;"> <br>
+              <img src="image/star_3star.jfif" alt="3star">
+            </div>
+            <div class="col-2-3">
+              <h1>Solid Rock Soccer Shoes</h1>
+              <span>Price: RM 360.00 </span>
+              <span>Delivery: 4days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Siza Available: S/M/L/XL</li>
+                <li>Color available: Black/ Grey</li>
+                <li>Suitable for: Adult man</li>
+                <li>Last long: 7 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+              
+        <script>
+          var modal7 = document.getElementById("modal7")
+          var product7 = document.getElementById("volley7")
+          var modalProduct7 = document.getElementById("modalVolley7")
+      
+          product7.onclick = function(){
+            modal7.style.display = "block";
+            modalProduct7.src = this.src;
+          }
+      
+          var span7 = document.getElementsByClassName('close7')[0];
+      
+          span7.onclick = function() {
+            modal7.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal8">
+          <span class="close8">&times;</span>
+          <div class="productA" id="modalVolley8">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_a1.jpg" alt="Sg 500 football goal size m" > <br>
+              <img src="image/star_4star.jfif" alt="4star">
+            </div>
+            <div class="col-2-3">
+              <h1>Sg 500 football goal size m</h1>
+              <span>Price: RM 249 </span>
+              <span>Delivery: 7days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Size Available: M</li>
+                <li>Color Available: Black/Orange, White/Black</li>
+                <li>Measurement: 3.6m X 2.5m</li>
+                <li>Last Long: 10 years if good care</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+        
+        <script>
+          var modal8 = document.getElementById("modal8")
+          var product8 = document.getElementById("volley8")
+          var modalProduct8 = document.getElementById("modalVolley8")
+    
+          product8.onclick = function(){
+            modal8.style.display = "block";
+            modalProduct8.src = this.src;
+          }
+    
+          var span8 = document.getElementsByClassName('close8')[0];
+    
+          span8.onclick = function() {
+            modal8.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal9">
+          <span class="close9">&times;</span>
+          <div class="productA" id="modalVolley9">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_a2.jpg" alt="Essential football training flat markers 10-pack " > <br>
+              <img src="image/star_3star.jfif" alt="3star">
+            </div>
+            <div class="col-2-3">
+              <h1 style="font-size: 1.8em;">Essential football training flat markers 10-pack </h1>
+              <span>Price: RM 29.00 </span>
+              <span>Delivery: 2days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Size Available: S/M</li>
+                <li>Color Available: Orange/ Red</li>
+                <li>Quantity: 10 per 1pack</li>
+                <li>Last Long: 6 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+
+        <script>
+          var modal9 = document.getElementById("modal9")
+          var product9 = document.getElementById("volley9")
+          var modalProduct9 = document.getElementById("modalVolley9")
+    
+          product9.onclick = function(){
+            modal9.style.display = "block";
+            modalProduct9.src = this.src;
+          }
+    
+          var span9 = document.getElementsByClassName('close9')[0];
+    
+          span9.onclick = function() {
+            modal9.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal10">
+          <span class="close10">&times;</span>
+          <div class="productA" id="modalVolley10">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_a3.jpg" alt="55L sports bag essential " > <br>
+              <img src="image/star_3star.jfif" alt="3star">
+            </div>
+            <div class="col-2-3">
+              <h1>55L sports bag essential </h1>
+              <span>Price: RM 49.00 </span>
+              <span>Delivery: 4days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Size Available: M/L</li>
+                <li>Color Available: Black/ Green</li>
+                <li>Measurement: 90cm X 60cm x 60cm</li>
+                <li>Last Long: 5 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>            </div>
+          </div>
+        </div>
+        
+        <script>
+          var modal10 = document.getElementById("modal10")
+          var product10 = document.getElementById("volley10")
+          var modalProduct10 = document.getElementById("modalVolley10")
+
+          product10.onclick = function(){
+            modal10.style.display = "block";
+            modalProduct10.src = this.src;
+          }
+
+          var span10 = document.getElementsByClassName('close10')[0];
+
+          span10.onclick = function() {
+            modal10.style.display = "none";
+          }
+        </script>
+        
+        <div id="modal11">
+          <span class="close11">&times;</span>
+          <div class="productA" id="modalVolley11">
+            <div class="col-1-3">
+              <img src="soccer_image/soccer_a4.jpg" alt="UCL CLUB PYROSTORM BALL" > <br>
+              <img src="image/star_4star.jfif" alt="4star">
+            </div>
+            <div class="col-2-3">
+              <h1>UCL CLUB PYROSTORM BALL</h1>
+              <span>Price: RM 79.00 </span>
+              <span>Delivery: 3days</span> <br><br>Highlights: <br>
+              <ol>
+                <li>Size Available: M</li>
+                <li>Color Available: White/Orange/Black</li>
+                <li>Measurement: 22cm (diameter)</li>
+                <li>Last Long: 3 years</li>
+              </ol>
+              <button class="add-cart" onclick="validateUser(event)"><span>Add To Cart</span> </button>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          var modal11 = document.getElementById("modal11")
+          var product11 = document.getElementById("volley11")
+          var modalProduct11 = document.getElementById("modalVolley11")
+          product11.onclick = function(){
+            modal11.style.display = "block";
+            modalProduct11.src = this.src;
+          }
+          var span11 = document.getElementsByClassName('close11')[0];
+          span11.onclick = function() {
+            modal11.style.display = "none";
+          }
+        </script> 
+      </div>
+      
+      <script src="product7.js"></script>
+
+      <script>
+      window.onscroll = function(){stick()};
+      
+      var navbar = document.getElementById("left");
+      var sticky = navbar.offsetTop;
+      
+      function stick(){
+        if (window.pageYOffset >= sticky){
+          navbar.classList.add("sticky")
+        }
+        else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      </script>
+      <!-- live chat-->
+    <button class="chat-button" onclick="openForm()">Customer Service</button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1 style="text-align: center;">Customer Service Centre</h1>
+
+        <b>Message</b>
+        <div>
+          <div>
+            Hi there, what can i help you? Please click the buttons below to display more details of it and 
+            click again to close it.
+          </div>
+          <button type="button" onclick="basketballForm()">Basketball?</button><br>
+          <div id="bas">We have put some basketball products such as top and bottom, shoes, 
+            and some accessories such as basketball, basketball net and more.</div>
+          <button type="button" onclick="volleyballForm()">Volleyball?</button><br>
+          <div id="vol">We have put some volleyball products such as top and bottom, shoes, 
+            and some accessories such as volleyball for begginer and pro, volleyball net and more.</div>
+          <button type="button" onclick="soccerForm()">Soccer?</button><br>
+          <div id="soc">We have put some soccer products such as top and bottom, shoes, 
+            and some accessories such as soccer ball, soccer net and more.</div>
+          <button type="button" onclick="pingpongForm()">Pingpong?</button><br>
+          <div id="pin">We have put some pingpong products such as top and bottom, shoes, 
+            and some accessories such as pingpong ball, pingpong net, pingpong racket and more.</div>
+        </div>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    </main>
+    </div>
+
+    <footer>
+      <div class="footerpart">
+        <div class="footercontent">
+          <div class="leftmostrow">
+            <header>Shoer Sports</header>
+            <ul>
+              <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                alt="small shoer logo" width="228" height="63"></li>
+                <br><br>
+              <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Company Info</header>
+            <ul class="links">
+              <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li><a href="review.html">Review Form</a></li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Sports</header>
+            <ul class="links">
+              <li><a href="All_Basketball.html">Basketball</a></li>
+              <li><a href="All_Volleyball.html">Volleyball</a></li>
+              <li><a href="All_Soccer.html">Soccer</a></li>
+              <li><a href="All_Pingpong.html">Pingpong</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="iconpart">
+          <div class="iconrow">
+            <ul class="icon">
+              <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+              <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+              <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+            </ul>
+
+            <ul id="copyright">
+              <li>Shoer Sports © 2021 | All rights Reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="cart3.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    /* live chat */
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      function basketballForm() {
+        var a = document.getElementById("bas");
+        if (a.style.display === "none") {
+          a.style.display = "block";
+          a.style.width = "max-content";
+          a.style.marginBottom = "10px";
+          a.style.width = "auto";
+        }
+        else {a.style.display = "none";}
+      }
+
+      function volleyballForm() {
+        var b = document.getElementById("vol");
+        if (b.style.display === "none") {
+          b.style.display = "block";
+          b.style.width = "max-content";
+          b.style.marginBottom = "10px";
+          b.style.width = "auto";
+        }
+        else {b.style.display = "none";}
+      }
+
+      function soccerForm() {
+        var c = document.getElementById("soc");
+        if (c.style.display === "none") {
+          c.style.display = "block";
+          c.style.width = "max-content";
+          c.style.marginBottom = "10px";
+          c.style.width = "auto";
+        }
+        else {c.style.display = "none";}
+      }
+
+      function pingpongForm() {
+        var d = document.getElementById("pin");
+        if (d.style.display === "none") {
+          d.style.display = "block";
+          d.style.width = "max-content";
+          d.style.marginBottom = "10px";
+          d.style.width = "auto";
+        }
+        else {d.style.display = "none";}
+      }
+  </script>
+</body>
+</html>

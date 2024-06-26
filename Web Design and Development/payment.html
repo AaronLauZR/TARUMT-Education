@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Payment</title>
+        <link rel="shortcut icon" href="image/icon_shoerlogo.ico?v=2" type="image/x-icon">
+        <link rel="stylesheet" href="header-footer.css">
+        <link rel="stylesheet" href="contentstyle.css">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="payment.css"/>
+    </head>
+
+    <body>
+      <div id="wrapper">
+        <header>
+          <ul class="side_by_side">
+            <li id="header_logo" >
+              <a href="index.html">
+                <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+              </a>
+            </li>
+            <li id="header_name"><h1>Shoer Sports</h1></li>
+            <li style="padding: 5px 15px;" class="new-element"></li>
+            <li style="padding: 5px 15px;">
+              <a href="ContactUs.html">Contact Us</a>
+            </li> 
+            <li style="padding: 5px 15px;" class="old-element">
+              <a href="login.html">Login</a>
+            </li>
+            <li style="padding: 5px 15px;">
+              <a href="register.html">Sign Up</a>
+            </li>
+    
+          </ul>
+          
+          <script>
+          let formData = localStorage.getItem('formData');
+          if( formData ) {
+            let storedNames = JSON.parse(localStorage.getItem("names"));
+            let displayName = document.querySelector('.new-element');
+            displayName.innerHTML += 
+            `<li class="new-element">
+              Hi, ${storedNames}
+            </li>`;
+            const listItem = document.querySelector("li:nth-child(5)");
+            const newItem = document.createElement('li');
+            newItem.innerHTML = '<li style="padding: 5px 15px"><a href="login.html">Log Out</a></li>';
+            listItem.parentNode.replaceChild(newItem, listItem);
+          }
+          </script>
+        </header>
+
+        <div class="background">
+          <br/><br/><br/><br/>
+          <article>
+            <div id="checkout">
+              <h1>Checkout</h1>
+            </div>
+            <br><br><br>
+            <div id="delivery">
+        <form action="/payment_success.html">
+            <label id="addressbox" for="addressBox"><strong>Delivery Address</strong></label><br><br>
+              <textarea type="text" id="addressBox" name="delAddress" placeholder="Enter your delivery address." required></textarea>
+            </div>
+            <br><br><br>
+            <div>
+     
+              <label id="bank" for="bank"><strong>Bank &#160&#160></strong></label>
+              <input type="radio" id="may" name="Bank" value="Maybank" checked>
+              <label id="Bank" for="Bank">Maybank</label>
+              <input type="radio" id="public" name="Bank" value="PublickBank">
+              <label id="Bank" for="Bank">Public Bank</label>
+              <input type="radio" id="hongleong" name="Bank" value="HongLeongBank">
+              <label id="Bank" for="Bank">Hong Leong Bank</label>
+              <input type="radio" id="cimb" name="Bank" value="CIMBBank">
+              <label id="Bank" for="Bank">CIMB Bank</label>
+              <input type="radio" id="affin" name="Affin" value="AffinBank">
+              <label id="Bank" for="Bank">Affin Bank</label><br>
+              <input type="radio" id="ocbc" name="Bank" value="OCBC Bank">
+              <label id="Bank" for="Bank">OCBC Bank</label>
+              <input type="radio" id="am" name="Bank" value="AmBank">
+              <label id="Bank" for="Bank">AmBank</label>
+              <input type="radio" id="rhb" name="Bank" value="RHBBank">
+              <label id="Bank" for="Bank">RHB Bank</label>
+              <input type="radio" id="uob" name="Bank" value="UOBMalaysiaBank">
+              <label id="Bank" for="Bank">UOB Malaysia Bank</label>
+              <input type="radio" id="rakyat" name="Bank" value="BankRakyat">
+              <label id="Bank" for="Bank">Bank Rakyat</label>
+      
+          </div>
+          <br><br><br>
+          <div>
+            <label id="account" for="accountNum"><strong>Account Number &#160&#160> &#160&#160</strong></label>
+            <input type="text" id="Account" name="accountNum" placeholder="12345678" pattern="[0-9].{7,}"required>
+          </div>
+            <br><br><br>
+            <div>
+              <label id="deliverylist" for="deliveryList"><strong>Express Shipping &#160&#160> &#160&#160</strong></label>
+              <select id="deliveryList" value="deliveryType" required>
+                <option selected disabled value="">Choose your express</option>
+                <option value="J&T Express">J&T Express</option>
+                <option value="Pos Laju">Pos Laju</option>
+                <option value="DHL Express">DHL Express</option>
+                <option value="Ninja Express">Ninja Express</option>
+                <option value="GD Express">GD Express</option>
+                <option value="SHOER Express">SHOER Express</option>
+               </select><br><br>
+            <button onclick="displayfees()"  id="displaydelfees" class="submit" type="button" 
+            style="background-image: url(image/confirm_icon.jpeg); background-size: 37%;font-size: 17px; 
+            width: 220px; margin-left: 370px;"> Confirm Express</button> 
+            <br><br><br><br>
+            <div id="price">
+            <table>
+              <colgroup>
+                <col style="text-align:right">
+              </colgroup>
+              <tr>
+                <th id="mersubtotal">Merchandise Subtotal :</h3></th>
+                <td class="displaysub"></td>
+              </tr>
+              <tr>
+                <th id="delfee">Delivery Fee : </th>
+                <th id="displaydelfee"></th>    
+                <script>
+                  var subtotal = 0;
+                  subtotal = JSON.parse(localStorage.getItem("totalCost"));
+                  let subtotal1 = document.querySelector('.displaysub');
+                  if (subtotal == null) {
+                    subtotal1.innerHTML += 
+                `<h3 class="displaysub">
+                  RM 0.00
+                </h3>`
+                  }
+                  else [
+                  subtotal1.innerHTML += 
+                `<h3 class="displaysub">
+                  RM ${subtotal}.00
+                </h3>`
+                  ]
+                </script>
+              </tr>
+              <tr>
+                <th id="payment">Total&#160Payment&#160:&#160</th>
+                <th id="subttl"></th>
+              </tr>
+            </table>
+              <button class="submit" type="submit" onclick="clearItem()">Place Order</button>
+            </div>
+            
+          </div>
+        </form>
+            <br><br><br><br>
+          </article>
+        </div>
+
+        <footer>
+          <div class="footerpart">
+            <div class="footercontent">
+              <div class="leftmostrow">
+                <header>Shoer Sports</header>
+                <ul>
+                  <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                    alt="small shoer logo" width="228" height="63"></li>
+                    <br><br>
+                  <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+                </ul>
+              </div>
+              <div class="contentrow">
+                <header>Company Info</header>
+                <ul class="links">
+                  <li><a href="AboutUs.html">About Us</a></li>
+                  <li><a href="ContactUs.html">Contact Us</a></li>
+                  <li><a href="FAQ.html">FAQ</a></li>
+                  <li><a href="review.html">Review Form</a></li>
+                </ul>
+              </div>
+              <div class="contentrow">
+                <header>Sports</header>
+                <ul class="links">
+                  <li><a href="All_Basketball.html">Basketball</a></li>
+                  <li><a href="All_Volleyball.html">Volleyball</a></li>
+                  <li><a href="All_Soccer.html">Soccer</a></li>
+                  <li><a href="All_Pingpong.html">Pingpong</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="iconpart">
+              <div class="iconrow">
+                <ul class="icon">
+                  <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+                  <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+                  <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+                </ul>
+    
+                <ul id="copyright">
+                  <li>Shoer Sports © 2021 | All rights Reserved.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <script>
+          function displayfee() {
+            var fee = 0;
+            var deliveryList = document.getElementById("deliveryList").value;
+              if ( deliveryList == 'J&T Express') {
+                fee = 4
+              }
+              else if ( deliveryList == 'Pos Laju') {
+                fee = 5
+              }
+              else if ( deliveryList == 'DHL Express') {
+                fee = 6
+              }
+              else if ( deliveryList == 'Ninja Express') {
+                fee = 7
+              }
+              else if ( deliveryList == 'GD Express') {
+                fee = 8
+              }
+              else if ( deliveryList == 'SHOER Express') {
+                fee = 3
+              }
+            displaytotalpayment(fee);
+            return fee;
+          }
+
+          function displayfees() {
+            document.getElementById("displaydelfee").innerHTML = "RM " + displayfee() + ".00";
+          }
+
+          function displaytotalpayment(fee) {
+            var totalsub = JSON.parse(localStorage.getItem("totalCost"));
+            let totalpayment = fee + totalsub;
+            if (totalpayment == totalsub) {
+              alert("Please Select Your Express!");
+            }
+            else {
+              document.getElementById("subttl").innerHTML = "RM " + totalpayment + ".00";
+            }
+          }
+
+          function clearItem() {
+            localStorage.removeItem('productsInCart');
+            localStorage.removeItem('totalCost');
+            localStorage.removeItem('cartNumbers');
+          }
+        </script>
+    </body>
+</html>

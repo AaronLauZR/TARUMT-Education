@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoer</title>
+    <link rel="shortcut icon" href="image/icon_shoerlogo.ico?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="contentstyle.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <ul class="side_by_side">
+        <li id="header_logo" >
+          <a href="index.html">
+            <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+          </a>
+        </li>
+        <li id="header_name"><h1>Shoer Sports</h1></li>
+        <li style="padding: 5px 15px;" class="new-element"></li>
+        <li style="padding: 5px 15px;">
+          <a href="ContactUs.html">Contact Us</a>
+        </li> 
+        <li style="padding: 5px 15px;" class="old-element">
+          <a href="login.html">Login</a>
+        </li>
+        <li style="padding: 5px 15px;">
+          <a href="register.html">Sign Up</a>
+        </li>
+
+      </ul>
+      
+      <script>
+      let formData = localStorage.getItem('formData');
+      if( formData ) {
+        let storedNames = JSON.parse(localStorage.getItem("names"));
+        let displayName = document.querySelector('.new-element');
+        displayName.innerHTML += 
+        `<li class="new-element">
+          Hi, ${storedNames}
+        </li>`;
+        const listItem = document.querySelector("li:nth-child(5)");
+        const newItem = document.createElement('li');
+        newItem.innerHTML = '<li style="padding: 5px 15px"><a href="login.html">Log Out</a></li>';
+        listItem.parentNode.replaceChild(newItem, listItem);
+      }
+      </script>
+    </header>
+  
+    <!-- navigation bar -->
+    <nav>
+      <div class="nav-bar">
+        <ul class="nav-links">
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li>
+            <a href="#">All Products</a>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <header><a href="All_Basketball.html">Basketball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Basketball_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Basketball_Shoes.html">Shoes</a></li>
+                    <li><a href="Basketball_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Volleyball.html">Volleyball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Volleyball_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Volleyball_Shoes.html">Shoes</a></li>
+                    <li><a href="Volleyball_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Soccer.html">Soccer</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Soccer_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Soccer_Shoes.html">Shoes</a></li>
+                    <li><a href="Soccer_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Pingpong.html">Pingpong</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Pingpong_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Pingpong_Shoes.html">Shoes</a></li>
+                    <li><a href="Pingpong_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li><a href="promotion.html">Promotion</a></li>
+          <li class="cart">
+            <a href="cart.html">
+                  <ion-icon name="basket"></ion-icon>Cart(<span>0</span>)
+            </a>
+         </li>               
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="cart_bg">
+      <br/><br/><br/><br/>
+      <div class="container-products">
+        <button id="cls" style="background-color: rgb(134, 0, 0); color: seashell;" onclick="clearItem()">Clear all item</button>
+          <div class="product-header">
+            <h4 class="product-title">PRODUCT</h4>
+            <h4 class="price sm-hide">PRICE</h4>
+            <h4 class="quantity">QUANTITY</h4>
+            <h4 class="total">TOTAL</h4>
+          </div>
+          <div class="products"></div>
+      </div>
+  
+      <div>
+        <button onclick="topayment()" class="submit" style="background-image: url(image/checkout_icon.png); 
+        background-size: 30%; font-size: 20px;">Check Out</button>
+        <br><br><br><br>
+      </div>
+    </div>
+
+    <script>
+      var del = document.querySelector("#cls");
+
+      del.onclick=function(){
+        localStorage.clear();
+        location.reload();
+      }
+
+      function topayment() {
+      if (confirm("Confirm your order?")) {
+            location.replace("payment.html")
+          }
+          else {
+          }
+        }
+    </script>
+
+    <footer>
+      <div class="footerpart">
+        <div class="footercontent">
+          <div class="leftmostrow">
+            <header>Shoer Sports</header>
+            <ul>
+              <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                alt="small shoer logo" width="228" height="63"></li>
+                <br><br>
+              <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Company Info</header>
+            <ul class="links">
+              <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li><a href="review.html">Review Form</a></li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Sports</header>
+            <ul class="links">
+              <li><a href="All_Basketball.html">Basketball</a></li>
+              <li><a href="All_Volleyball.html">Volleyball</a></li>
+              <li><a href="All_Soccer.html">Soccer</a></li>
+              <li><a href="All_Pingpong.html">Pingpong</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="iconpart">
+          <div class="iconrow">
+            <ul class="icon">
+              <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+              <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+              <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+            </ul>
+
+            <ul id="copyright">
+              <li>Shoer Sports © 2021 | All rights Reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+    <script src="cart1.js"></script>
+    <script src="cart2.js"></script>
+    <script src="cart3.js"></script>
+    <script src="cart4.js"></script>
+    <script src="cartB1.js"></script>
+    <script src="cartB2.js"></script>
+    <script src="cartB3.js"></script>
+    <script src="cartP1.js"></script>
+    <script src="cartP2.js"></script>
+    <script src="cartP3.js"></script>
+    <script src="cartS1.js"></script>
+    <script src="cartS2.js"></script>
+    <script src="cartS3.js"></script>
+    <script src="cartV1.js"></script>
+    <script src="cartV2.js"></script>
+    <script src="cartV3.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      /* live chat */
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      function basketballForm() {
+        var a = document.getElementById("bas");
+        if (a.style.display === "none") {
+          a.style.display = "block";
+          a.style.width = "max-content";
+          a.style.marginBottom = "10px";
+          a.style.width = "auto";
+        }
+        else {a.style.display = "none";}
+      }
+
+      function volleyballForm() {
+        var b = document.getElementById("vol");
+        if (b.style.display === "none") {
+          b.style.display = "block";
+          b.style.width = "max-content";
+          b.style.marginBottom = "10px";
+          b.style.width = "auto";
+        }
+        else {b.style.display = "none";}
+      }
+
+      function soccerForm() {
+        var c = document.getElementById("soc");
+        if (c.style.display === "none") {
+          c.style.display = "block";
+          c.style.width = "max-content";
+          c.style.marginBottom = "10px";
+          c.style.width = "auto";
+        }
+        else {c.style.display = "none";}
+      }
+
+      function pingpongForm() {
+        var d = document.getElementById("pin");
+        if (d.style.display === "none") {
+          d.style.display = "block";
+          d.style.width = "max-content";
+          d.style.marginBottom = "10px";
+          d.style.width = "auto";
+        }
+        else {d.style.display = "none";}
+      }
+    </script>
+    <script>
+      formData = localStorage.getItem('formData')
+      if (formData == null) {
+        function clearItem() {
+          localStorage.removeItem('productsInCart');
+          localStorage.removeItem('totalCost');
+          localStorage.removeItem('cartNumbers');
+    }
+      }
+    </script>
+  </body>
+</html>

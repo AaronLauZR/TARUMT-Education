@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment Successful!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        <link rel="stylesheet" href="header-footer.css"/>
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="success.css"/>
+
+        <script>
+          function returnhh() {
+            function disableBack() { window.history.forward(); }
+            setTimeout("disableBack()", 0);
+            window.onunload = function () { null };
+            alert("Thanks for ordering at SHOER!");
+            location.replace("index.html");
+          }
+          
+        </script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+          <header>
+            <ul class="side_by_side">
+              <li id="header_logo" >
+                <a href="index.html">
+                  <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+                </a>
+              </li>
+              <li id="header_name"><h1>Shoer Sports</h1></li>
+              <li style="padding: 5px 15px;" class="new-element"></li>
+              <li style="padding: 5px 15px;">
+                <a href="ContactUs.html">Contact Us</a>
+              </li> 
+              <li style="padding: 5px 15px;" class="old-element">
+                <a href="login.html">Login</a>
+              </li>
+              <li style="padding: 5px 15px;">
+                <a href="register.html">Sign Up</a>
+              </li>
+      
+            </ul>
+            
+            <script>
+            let formData = localStorage.getItem('formData');
+            if( formData ) {
+              let storedNames = JSON.parse(localStorage.getItem("names"));
+              let displayName = document.querySelector('.new-element');
+              displayName.innerHTML += 
+              `<li class="new-element">
+                Hi, ${storedNames}
+              </li>`;
+              const listItem = document.querySelector("li:nth-child(5)");
+              const newItem = document.createElement('li');
+              newItem.innerHTML = '<li style="padding: 5px 15px"><a href="login.html">Log Out</a></li>';
+              listItem.parentNode.replaceChild(newItem, listItem);
+            }
+            </script>
+          </header>
+        
+          <!-- navigation bar -->
+          <nav>
+            <div class="nav-bar">
+              <ul class="nav-links">
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li>
+                  <a href="#">All Products</a>
+                  <div class="mega-box">
+                    <div class="content">
+                      <div class="row">
+                        <header><a href="All_Basketball.html">Basketball</a></header>
+                        <ul class="mega-links">
+                          <li><a href="Basketball_T_B.html">Top and Bottom</a></li>
+                          <li><a href="Basketball_Shoes.html">Shoes</a></li>
+                          <li><a href="Basketball_A.html">Accessories</a></li>
+                        </ul>
+                      </div>
+                      <div class="row">
+                        <header><a href="All_Volleyball.html">Volleyball</a></header>
+                        <ul class="mega-links">
+                          <li><a href="Volleyball_T_B.html">Top and Bottom</a></li>
+                          <li><a href="Volleyball_Shoes.html">Shoes</a></li>
+                          <li><a href="Volleyball_A.html">Accessories</a></li>
+                        </ul>
+                      </div>
+                      <div class="row">
+                        <header><a href="All_Soccer.html">Soccer</a></header>
+                        <ul class="mega-links">
+                          <li><a href="Soccer_T_B.html">Top and Bottom</a></li>
+                          <li><a href="Soccer_Shoes.html">Shoes</a></li>
+                          <li><a href="Soccer_A.html">Accessories</a></li>
+                        </ul>
+                      </div>
+                      <div class="row">
+                        <header><a href="All_Pingpong.html">Pingpong</a></header>
+                        <ul class="mega-links">
+                          <li><a href="Pingpong_T_B.html">Top and Bottom</a></li>
+                          <li><a href="Pingpong_Shoes.html">Shoes</a></li>
+                          <li><a href="Pingpong_A.html">Accessories</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li><a href="promotion.html">Promotion</a></li>
+                <li class="cart">
+                  <a href="cart.html">
+                        <ion-icon name="basket"></ion-icon>Cart(<span>0</span>)
+                  </a>
+               </li>               
+                <li><a href="FAQ.html">FAQ</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="background">
+            <br/><br/><br/><br/>
+            <article>
+              <div id="space">
+                <h1 id="title">Payment Succesful!</h1>
+                <p id="message">We will ship your parcel as fast as possible, please be patient.</p><br>
+                <button onclick="returnhh()" id="return">Return To Home Page</button>
+              </div>
+            </article>
+            <br><br><br><br>
+          </div>
+
+     <footer>
+            <div class="footerpart">
+              <div class="footercontent">
+                <div class="leftmostrow">
+                  <header>Shoer Sports</header>
+                  <ul>
+                    <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                      alt="small shoer logo" width="228" height="63"></li>
+                      <br><br>
+                    <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+                  </ul>
+                </div>
+                <div class="contentrow">
+                  <header>Company Info</header>
+                  <ul class="links">
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="review.html">Review Form</a></li>
+                  </ul>
+                </div>
+                <div class="contentrow">
+                  <header>Sports</header>
+                  <ul class="links">
+                    <li><a href="All_Basketball.html">Basketball</a></li>
+                    <li><a href="All_Volleyball.html">Volleyball</a></li>
+                    <li><a href="All_Soccer.html">Soccer</a></li>
+                    <li><a href="All_Pingpong.html">Pingpong</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="iconpart">
+                <div class="iconrow">
+                  <ul class="icon">
+                    <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+                    <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+                    <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+                  </ul>
+      
+                  <ul id="copyright">
+                    <li>Shoer Sports © 2021 | All rights Reserved.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+     </footer>
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="cart1.js"></script>
+    </div>
+</body>
+</html>

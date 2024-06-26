@@ -1,0 +1,207 @@
+.background {
+    background-image: url('image/multi_background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#checkout {
+    text-shadow:4px 3px lightgrey;
+    font-family:Helvetica, sans-serif;
+    font-size:32px;
+    width:100%;
+    background-color:linen;
+    padding-left:70px;
+    padding-top:0.1px;
+    padding-bottom:0.1px;
+}
+
+textarea {
+    display:block;
+    width:50%;
+    height:100px;
+ }
+
+#addressbox {
+    font-size:27px;
+    margin-left:70px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:3px 3px lightgrey;
+}
+
+#addressBox {
+     font-size:22px;
+     font-family:Helvetica, sans-serif;
+     display: block;
+     margin-left:70px;
+     height:170px;
+     width:50%
+}
+
+#deliverylist {
+    font-size:27px;
+    padding-left:70px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:3px 3px lightgrey;
+}
+
+#deliveryList {
+    font-size:22px;
+    font-family:Helvetica, sans-serif;
+}
+
+#displaydelfees {
+    font-size:22px;
+    font-family:Helvetica, sans-serif;
+    margin-left:400px;
+}
+
+#displaydelfee {
+    font-size:20px;
+    padding-left:20px;
+    font-family:Helvetica, sans-serif;
+}
+
+#order {
+    font-size:27px;
+    padding-left:70px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:3px 3px lightgrey;
+}
+
+#voucher {
+    font-size:27px;
+    padding-left:70px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:3px 3px lightgrey;
+}
+
+#bank {
+    font-size:27px;
+    padding-left:70px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:3px 3px lightgrey;
+}
+
+#Bank {
+    margin-left:5px;
+    font-size:22px;
+    font-family:Helvetica, sans-serif;
+}
+
+#may {
+    margin-left:30px;
+}
+
+#public {
+    margin-left:65px;
+}
+
+#hongleong {
+    margin-left:30px;
+}
+
+#cimb {
+    margin-left:30px;
+}
+
+#affin {
+    margin-left:127px;
+}
+
+#ocbc {
+    margin-left:216px;
+}
+
+#am {
+    margin-left:34px;
+}
+
+#rhb {
+    margin-left:63px;
+}
+
+#uob {
+    margin-left:104px;
+}
+
+#rakyat {
+    margin-left:41px;
+}
+
+#account {
+    font-size:27px;
+    padding-left:70px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:3px 3px lightgrey;
+}
+
+#Account {
+    font-size:22px;
+    font-family:Helvetica, sans-serif;
+}
+
+#mersubtotal {
+    font-size:20px;
+    padding-left:70px;
+    font-family:Helvetica, sans-serif;
+}
+
+#delfee {
+    font-size:20px;
+    padding-left:159px;
+    font-family:Helvetica, sans-serif;
+}
+
+.displaysub {
+    font-family:Helvetica, sans-serif;
+    font-size:20px;
+    margin-left:20px;
+}
+
+#displaydelfee {
+    font-family:Helvetica, sans-serif;
+    font-size:20px;
+}
+
+#payment {
+    padding-top:15px;
+    font-size:25px;
+    padding-left:108px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:2px 2px lightgrey;
+}
+
+#subttl {
+    padding-top:15px;
+    font-size:25px;
+    padding-left:10px;
+    font-family:Helvetica, sans-serif;
+    text-shadow:2px 2px lightgrey;
+}
+
+#price {
+    background-color:linen;
+    padding-top:2px;
+    padding-bottom:100px;
+}
+
+.submit{
+    margin-left: 1100px;
+    margin-top: 40px;
+    border: none;
+    height: 70px;
+    width: 230px;
+    background-image: url("image/place_order.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 35%;
+    text-align: right;
+    font-size: 27px;
+    box-shadow: 5px 5px grey;
+}
+.submit:active{
+    background-color: #186dec;
+    box-shadow: 10 10px #666;
+    transform:  translateX(5px);
+    transition: 0.1s;
+}

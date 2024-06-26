@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="image/icon_shoerlogo.ico?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="header-footer.css"/>
+    <link rel="stylesheet" href="contentstyle.css"/>
+</head>
+<body>
+    <div id="wrapper">
+      <header>
+        <ul class="side_by_side">
+          <li id="header_logo" >
+            <a href="index.html">
+              <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+            </a>
+          </li>
+          <li id="header_name"><h1>Shoer Sports</h1></li>
+          <li style="padding: 5px 15px;" class="new-element"></li>
+          <li style="padding: 5px 15px;">
+            <a href="ContactUs.html">Contact Us</a>
+          </li> 
+          <li style="padding: 5px 15px;" class="old-element">
+            <a href="login.html">Login</a>
+          </li>
+          <li style="padding: 5px 15px;">
+            <a href="register.html">Sign Up</a>
+          </li>
+  
+        </ul>
+        
+        <script>
+        let formData = localStorage.getItem('formData');
+        if( formData ) {
+          let storedNames = JSON.parse(localStorage.getItem("names"));
+          let displayName = document.querySelector('.new-element');
+          displayName.innerHTML += 
+          `<li class="new-element">
+            Hi, ${storedNames}
+          </li>`;
+          const listItem = document.querySelector("li:nth-child(5)");
+          const newItem = document.createElement('li');
+          newItem.innerHTML = '<li style="padding: 5px 15px"><a href="login.html">Log Out</a></li>';
+          listItem.parentNode.replaceChild(newItem, listItem);
+        }
+        </script>
+      </header>
+    
+      <!-- navigation bar -->
+      <nav>
+        <div class="nav-bar">
+          <ul class="nav-links">
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li>
+              <a href="#">All Products</a>
+              <div class="mega-box">
+                <div class="content">
+                  <div class="row">
+                    <header><a href="All_Basketball.html">Basketball</a></header>
+                    <ul class="mega-links">
+                      <li><a href="Basketball_T_B.html">Top and Bottom</a></li>
+                      <li><a href="Basketball_Shoes.html">Shoes</a></li>
+                      <li><a href="Basketball_A.html">Accessories</a></li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <header><a href="All_Volleyball.html">Volleyball</a></header>
+                    <ul class="mega-links">
+                      <li><a href="Volleyball_T_B.html">Top and Bottom</a></li>
+                      <li><a href="Volleyball_Shoes.html">Shoes</a></li>
+                      <li><a href="Volleyball_A.html">Accessories</a></li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <header><a href="All_Soccer.html">Soccer</a></header>
+                    <ul class="mega-links">
+                      <li><a href="Soccer_T_B.html">Top and Bottom</a></li>
+                      <li><a href="Soccer_Shoes.html">Shoes</a></li>
+                      <li><a href="Soccer_A.html">Accessories</a></li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <header><a href="All_Pingpong.html">Pingpong</a></header>
+                    <ul class="mega-links">
+                      <li><a href="Pingpong_T_B.html">Top and Bottom</a></li>
+                      <li><a href="Pingpong_Shoes.html">Shoes</a></li>
+                      <li><a href="Pingpong_A.html">Accessories</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+            <li><a href="promotion.html">Promotion</a></li>
+            <li class="cart">
+              <a href="cart.html">
+                    <ion-icon name="basket"></ion-icon>Cart(<span>0</span>)
+              </a>
+           </li>               
+            <li><a href="FAQ.html">FAQ</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <!-- Insert code -->
+    <div class="blue_bubble">
+        <br/><br/><br/><br/>
+        <h1 id="contactus-title">Contact Us</h1>
+
+        <div id="email_contact">
+            <p>In order for us to give you the best answer, please email to any of our team members and we will 
+                reply to you as soon as possible.
+            </p>
+            <div class="email_sideflex">
+                <a href="mailto:shoer@gmail.com"><img src="image/email.png" alt="Email_logo"></a>
+                <p>Email : <a href="mailto:shoer@gmail.com" class="contact_link">shoer@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div id="social_media">
+            <p>Follow us at Instagram, Facebook and Twitter to not miss out on great promotions!</p>
+            <div>
+                <ul id="social_sideflex">
+                    <li>
+                        <p>Facebook : <a href="" class="contact_link">Shoer Sport</a><br></p>
+                        <a href=""><img src="image/facebookicon.png" alt="Facebook_logo"></a>
+                    </li>
+                    <li>
+                        <p>Instagram : <a href="" class="contact_link">Shoer Sport</a></p>
+                        <a href=""><img src="image/instagramicon.png" alt="Instagram_logo"></a>
+                    </li>
+                    <li>
+                        <p>Twitter : <a href="" class="contact_link">Shoer Sport</a></p>
+                        <a href=""><img src="image/twittericon.png" alt="Twitter_logo"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="store_location">
+            <p>Dear valued customers, you may use the Google Map below to find and visit our store!</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.880709041158!2d101.71099650795077!3d3.1574850994252346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc37d12d669c1f%3A0xc955b08cfc1aae29!2sSuria%20KLCC!5e0!3m2!1sen!2smy!4v1631073056690!5m2!1sen!2smy" 
+            width="400" height="300" style="border:0; margin-left: 10px;" allowfullscreen="" loading="lazy" aria-hidden="false" tabindex="0"></iframe>
+            <p class="address">
+                Address : 241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur
+            </p>
+        </div>
+
+        <br/><br/><br/><br/>
+        <!-- live chat-->
+    <button class="chat-button" onclick="openForm()">Customer Service</button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1 style="text-align: center;">Customer Service Centre</h1>
+
+        <b>Message</b>
+        <div>
+          <div>
+            Hi there, what can i help you? Please click the buttons below to display more details of it and 
+            click again to close it.
+          </div>
+          <button type="button" onclick="basketballForm()">Basketball?</button><br>
+          <div id="bas">We have put some basketball products such as top and bottom, shoes, 
+            and some accessories such as basketball, basketball net and more.</div>
+          <button type="button" onclick="volleyballForm()">Volleyball?</button><br>
+          <div id="vol">We have put some volleyball products such as top and bottom, shoes, 
+            and some accessories such as volleyball for begginer and pro, volleyball net and more.</div>
+          <button type="button" onclick="soccerForm()">Soccer?</button><br>
+          <div id="soc">We have put some soccer products such as top and bottom, shoes, 
+            and some accessories such as soccer ball, soccer net and more.</div>
+          <button type="button" onclick="pingpongForm()">Pingpong?</button><br>
+          <div id="pin">We have put some pingpong products such as top and bottom, shoes, 
+            and some accessories such as pingpong ball, pingpong net, pingpong racket and more.</div>
+        </div>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    </div>
+
+
+
+    <footer>
+      <div class="footerpart">
+        <div class="footercontent">
+          <div class="leftmostrow">
+            <header>Shoer Sports</header>
+            <ul>
+              <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                alt="small shoer logo" width="228" height="63"></li>
+                <br><br>
+              <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Company Info</header>
+            <ul class="links">
+              <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li><a href="review.html">Review Form</a></li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Sports</header>
+            <ul class="links">
+              <li><a href="All_Basketball.html">Basketball</a></li>
+              <li><a href="All_Volleyball.html">Volleyball</a></li>
+              <li><a href="All_Soccer.html">Soccer</a></li>
+              <li><a href="All_Pingpong.html">Pingpong</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="iconpart">
+          <div class="iconrow">
+            <ul class="icon">
+              <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+              <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+              <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+            </ul>
+
+            <ul id="copyright">
+              <li>Shoer Sports © 2021 | All rights Reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script src="cart1.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    /* live chat */
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      function basketballForm() {
+        var a = document.getElementById("bas");
+        if (a.style.display === "none") {
+          a.style.display = "block";
+          a.style.width = "max-content";
+          a.style.marginBottom = "10px";
+          a.style.width = "auto";
+        }
+        else {a.style.display = "none";}
+      }
+
+      function volleyballForm() {
+        var b = document.getElementById("vol");
+        if (b.style.display === "none") {
+          b.style.display = "block";
+          b.style.width = "max-content";
+          b.style.marginBottom = "10px";
+          b.style.width = "auto";
+        }
+        else {b.style.display = "none";}
+      }
+
+      function soccerForm() {
+        var c = document.getElementById("soc");
+        if (c.style.display === "none") {
+          c.style.display = "block";
+          c.style.width = "max-content";
+          c.style.marginBottom = "10px";
+          c.style.width = "auto";
+        }
+        else {c.style.display = "none";}
+      }
+
+      function pingpongForm() {
+        var d = document.getElementById("pin");
+        if (d.style.display === "none") {
+          d.style.display = "block";
+          d.style.width = "max-content";
+          d.style.marginBottom = "10px";
+          d.style.width = "auto";
+        }
+        else {d.style.display = "none";}
+      }
+  </script>
+</body>
+</html>

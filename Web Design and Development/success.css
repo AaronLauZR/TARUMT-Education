@@ -1,0 +1,381 @@
+.background {
+  background-image: url('background2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* HomePage start */
+
+/* image slideshow */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 80%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {display: none}
+
+.mySlides img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.slideshow-container p {
+  font-size: 22px;
+}
+/* ------ slide container end ----- */
+
+/* product and content*/
+.header_background{
+  background-color:#363535;
+  color: white;
+  padding: 10px;
+}
+
+.text_center{
+  text-align: center;
+}
+
+.img_center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blue_bg{
+  background-color: lightsteelblue;
+  padding: 15px;
+}
+
+.product_side{
+  padding-left: 0;
+  display: flex;
+  margin-bottom: 0;
+}
+
+.product_side li{
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product_side li a {
+  text-decoration: none;
+}
+
+.links_style p{
+  padding: 15px 20px;
+  background-color: #D5CBF6;
+  color: #42219C;
+  border:none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.15em;
+}
+
+.links_style p:hover{
+  background-color: #ffcdb3;
+  color: #b10678;
+}
+/* HomePage end */
+
+/* FAQ start */
+.para {
+  background-color: white;
+  margin: 0% 12.5%;
+  width: 75%;
+  border: 2px solid black;
+}
+
+.faq-h1 {
+  text-align: center;
+}
+
+.faq-b {
+  font-size: 22px;
+  margin: 0px 10px;
+}
+
+.faq-p {
+  font-size: 21px;
+  color: grey;
+  margin: 0px 10px;
+  margin-bottom: 60px;
+}
+
+/* go to top button */
+button #gotoTop{
+  width: 80px;
+  height: 80px;
+}
+
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+/* FAQ end*/
+
+/* signup and login */
+.hero {
+  height: 100%;
+  width: 100%;
+  background-image: 
+  linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+  url("image/blue.jfif");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.form-box {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 6% auto;
+  background: #fff;
+  padding: 5px;
+}
+
+.membership_title {
+  font-size: 25px; 
+  text-align: center; 
+  padding-top: 25px;
+}
+
+.input-group {
+  top: 45px;
+  position: relative;
+  width: 280px;
+  transition: .5s;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  
+}
+
+.submit-btn{
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #1093ff,#06ffc5);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  top: 200px;
+}
+
+.check-box {
+  margin: 30px 10px 30px 0;
+}
+
+.agree {
+  color: #777;
+  font-size: 12px;
+  bottom: 68px;
+  position: absolute;
+}
+
+#loginbtn {
+  margin-top: 25px;
+}
+
+#login {
+  left: 50px;
+}
+
+#register {
+  left: 50px;
+}
+
+#eye {
+  top: 60px;
+  left: 240px;
+  position: absolute;
+}
+
+#hide1 {
+  width: 80%;
+  display: none;
+}
+
+#hide2 {
+  width: 80%;
+}
+
+/* Contact Us start */
+#contactus-title {
+  text-align:center;
+  text-shadow:3px 3px gainsboro;
+  font-size:35px
+}
+
+.contact_link {
+  text-decoration: none;
+  color: rgb(14, 53, 168);
+}
+.contact_link:hover {
+  color: rgb(184, 53, 129);
+}
+
+#email_contact {
+  margin: 0 auto;
+  width: 1041px;
+  height: 250px;
+  padding: 5px;
+  border: 2px solid black;
+  font-size: large;
+  position: relative;
+  background-color: rgb(215, 208, 253);
+  box-shadow: 10px 10px 10px #828282;
+}
+
+#email_contact img {
+  height: 110px;
+  width: 110px;
+}
+
+.email_sideflex {
+  display: flex;
+  padding-top: 10px;
+  padding-left: 100px;
+}
+
+.email_sideflex p {
+  padding-top: 20px;
+  padding-left: 120px;
+  font-weight: bold;
+}
+
+#social_media {
+  margin: 0 auto;
+  width: 1041px;
+  height: 250px;
+  padding: 5px;
+  border: 2px solid black;
+  font-size: large;
+  position: relative;
+  background-color: rgb(215, 208, 253);
+  box-shadow: 10px 10px 10px #828282;
+}
+#social_media img {
+  margin-left: 40px;
+}
+
+#social_sideflex {
+  list-style-type: none;
+  display: flex;
+  padding-top: 10px;
+}
+
+#social_sideflex li {
+  margin: 0 auto;
+}
+
+#store_location {
+  margin: 0 auto;
+  width: 1041px;
+  height: 400px;
+  padding: 5px;
+  border: 2px solid black;
+  font-size: large;
+  position: relative;
+  background-color: rgb(215, 208, 253);
+  box-shadow: 10px 10px 10px #828282;
+}
+
+#store_location  .address {
+  position: absolute;
+  left: 500px;
+  top: 150px;
+}
+
+#space {
+  background-color:linen;
+  padding-top:25px;
+  padding-bottom:50px;
+  text-align:center;
+} 
+
+#title {
+  font-size:50px;
+}
+
+#message {
+  font-size:25px;
+}
+
+#return {
+  text-align:center;
+  font-size:25px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:40px;
+  padding-right:40px;
+}
+
+
+

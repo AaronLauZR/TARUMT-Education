@@ -1,0 +1,106 @@
+/*new thing*/
+
+.leftimage, .rightdetail{
+  float: left;
+}
+
+.leftimage {
+  width: 33.33%;
+}
+  
+.rightdetail {
+  padding: 0px 20px;
+  width: 66.67%;
+  font-size: 1.2em;
+  height: 75%;
+}
+  
+.leftimage img, .rightdetail img{
+  width: 345px;
+}
+
+.rightdetail h1{
+  margin: 15px 0px;
+  font-size: 2.5em; 
+  font-family: Gabriola; 
+  text-align: center;
+  font-weight: 900;
+  color: rgb(202, 120, 42);
+} 
+
+.rightdetail > span{
+  margin-right: 27%;
+  color: grey;
+}
+
+.TB img{
+  padding-top: 10px;
+}
+
+.TB {
+  width: 11.1in; 
+  margin: auto;
+  border: 2px solid black;
+  height: 400px;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: rgb(255, 240, 211);
+  height: 450px;
+}
+
+/*add to cart*/
+.TB button{
+  display:inline-block;
+  border-radius: 10px;
+  /* background-color: rgba(133, 248, 133, 0.781); */
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 32%;
+  margin-top: 10px;
+  font-size: 18px;
+  box-shadow: 0 9px rgb(110, 216, 175);
+}
+
+.TB span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.TB span:after{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.TB button:hover span{
+  padding-right: 25px;
+}
+
+.TB button:hover span:after{
+  opacity: 2;
+  right: 0;
+}
+
+.TB button:active{
+  background-color: #18ec1f;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transition: 0.1s;
+}
+
+.TB_title {
+  margin-left: 20%;
+}
+  

@@ -1,0 +1,198 @@
+/*promotion title! */
+#promotion{
+    position: relative;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.word{
+    text-align: center;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: .6s ease;
+    backface-visibility: hidden;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(177, 250, 255, 0.815);
+    background-image: url(image/ballon.jpg),url(image/1stAnnivesary.jpg);
+    background-size: 170px;
+    background-repeat: no-repeat;
+    background-position: left,right;
+}
+
+.word2{
+    text-align: center;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: .6s ease;
+    backface-visibility: hidden;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: hsl(320, 100%, 87%);
+    background-image: url(image/angel.jpg),url(image/1010.jpg);
+    background-size: 170px , 170px 170px;
+    background-repeat: no-repeat;
+    background-position: left,right;
+}
+
+.word3{
+    text-align: center;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: .6s ease;
+    backface-visibility: hidden;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: hsl(39, 100%, 78%);
+    background-image: url(image/summer01.jpg),url(image/summer02.jpg);
+    background-size: 170px 170px , 170px 170px;
+    background-repeat: no-repeat;
+    background-position: left,right;
+}
+
+.word2 h2{
+    font-style: oblique;
+}
+
+.word3 h2{
+    font-style:italic;
+}
+
+.word p,
+.word2 p,
+.word3 p{
+    color: rgb(78, 78, 78);
+    font-size: 20px;
+}
+
+.word i,
+.word2 i,
+.word3 i{
+    color: rgb(19, 11, 11);
+    font-weight: 550;
+}
+
+
+.more,
+.more3{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#promotion:hover .word,
+#promotion:hover .word2,
+#promotion:hover .word3{
+    opacity: 0.3;
+}
+
+#promotion:hover .more,
+#promotion:hover .more3{
+    opacity: 1;
+}
+
+.more button{
+    border: none;
+    outline: 0;
+    background-color: rgba(255, 157, 173, 0.89);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.more3 button{
+    border: none;
+    outline: 0;
+    background-color: rgba(201, 181, 8, 0.89);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+/*rgba(201, 181, 8, 0.89)
+rgb(146, 212, 130)*/
+.more button:hover{
+    background-color: rgb(169, 130, 212);
+}
+
+.more3 button:hover{
+    background-color: rgb(104, 255, 66);
+}
+
+/*End of promotion title*/
+
+/*beginning of product card*/
+#panel,
+#panel2,
+#panel3{
+    width: 10in;
+    margin: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.438);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-width: 300px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px; 
+    text-align: center;
+}
+
+.price{
+    color: grey;
+    font-size: 22px;
+}
+
+#oriprice{
+    text-decoration: line-through; 
+    font-size: 15px;
+    color: lightslategray;
+}
+
+.card button{
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover{
+    opacity: 0.7;
+}
+
+/* end product card*/
+
+/*display card when click MORE INFORMATION */
+ .information{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+ #panel{
+    /* display: none;  */
+    overflow: hidden; 
+}  
+
+
+

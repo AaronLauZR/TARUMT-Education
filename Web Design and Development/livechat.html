@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoer Sports</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #bas, #vol, #soc, #pin{
+      display: none;
+      width: auto;
+      margin: 5px, 0px;
+      }
+
+    .chat-button {
+      background-color: black;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.7;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 260px;
+    }
+
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0px;
+      right: 15px;
+      border: 2px solid grey;
+      z-index: 9;
+    }
+
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: lightgrey;
+    }
+
+    .form-container div {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0px 22px 0px;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      max-height: 250px;
+      max-width: 270px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+
+    .form-container > div > div {
+      width: auto;
+      margin: 5px 0px;
+      padding: 5px 5px;
+      border-radius: 12px;
+      background-color: lightskyblue;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .form-container > div > button {
+      width: auto;
+      margin: 5px 0px;
+      padding: 5px 5px;
+      border-radius: 12px;
+      background-color: lightskyblue;
+      border: none;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .form-container > div > button:hover {
+      width: auto;
+      margin: 5px 0px;
+      padding: 5px 5px;
+      border-radius: 12px;
+      background-color: lightblue;
+      border: none;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .form-container div:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <ul class="side_by_side">
+          <li id="header_logo" >
+              <a href="index.html">
+              <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+              </a>
+          </li>
+          <li id="header_name"><h1>Shoer Sports</h1></li> 
+      </ul>
+    </header>
+  
+    <!-- navigation bar -->
+    <nav>
+      <div class="nav-bar">
+        <ul class="nav-links">
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li>
+            <a href="#">All Products</a>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <header><a href="basketball.html">Basketball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="#">Top and Bottom</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="">Badminton</a></header>
+                  <ul class="mega-links">
+                    <li><a href="#">Top and Bottom</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="">Soccer</a></header>
+                  <ul class="mega-links">
+                    <li><a href="#">Top and Bottom</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Accessories</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="#">Shopping Cart</a></li>        
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <div id="background">
+      <!-- image slideshow -->
+      <div class="slideshow-container">
+    
+        <div class="mySlides fade">
+          <img src="image/1.jpg" >
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="image/2.jpg" >
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="image/3.jpg" >
+        </div>
+    
+        <!--     Next and previous buttons-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a> 
+
+        <h1>Welcome to the Shoer Equipment Store</h1>
+        <p>
+          Welcome to SHOER sports website. Trying to find the cheapest , best quality 
+          sport shoes? Looking for the most comfortable sports experience? Here SHOER, 
+          is the best platform for you to find your lovely sport shoes with the most 
+          suitable price.
+        </p>
+      </div>
+      <div class="product">
+        <h2 class="header_background text_center">EXPLORE BY CATEGORY</h2>
+        <ul class="product_side">
+          <li>
+              <h3 class="text_center blue_bg">BASKETBALL</h3>
+              <a href="basketball.html">
+                  <div class="links_style">
+                      <img class="img_border img_center" src="image/.PNG" alt="This is SHOER basketball product image.">
+                      <p class="text_center">Discover More</p>  
+                  </div>
+              </a>
+          </li>
+          <li>
+              <h3 class="text_center blue_bg">BADMINTON</h3>
+              <a href=".html">
+                  <div class="links_style">
+                      <img class="img_border img_center" src="image/.PNG" alt="This is SHOER badminton product image.">
+                      <p class="text_center">Discover More</p>   
+                  </div>
+              </a>
+          </li>
+          <li>
+            <h3 class="text_center blue_bg">SOCCER</h3>
+            <a href=".html">
+                <div class="links_style">
+                    <img class="img_border img_center" src="image/.PNG" alt="This is SHOER soccer product image.">
+                    <p class="text_center">Discover More</p>   
+                </div>
+            </a>
+        </li>
+      </ul>    
+      </div>
+    </div>
+
+
+<!-- live chat-->
+<button class="chat-button" onclick="openForm()">Customer Service</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1 style="text-align: center;">Customer Service Centre</h1>
+
+    <b>Message</b>
+    <div>
+      <div>
+        Hi there, what can i help you? Please click the buttons below to display more details of it and 
+        click again to close it.
+      </div>
+      <button type="button" onclick="basketballForm()">Basketball?</button><br>
+      <div id="bas">We have put some basketball products such as top and bottom, shoes, 
+        and some accessories such as basketball, basketball net and more.</div>
+      <button type="button" onclick="volleyballForm()">Volleyball?</button><br>
+      <div id="vol">We have put some volleyball products such as top and bottom, shoes, 
+        and some accessories such as volleyball for begginer and pro, volleyball net and more.</div>
+      <button type="button" onclick="soccerForm()">Soccer?</button><br>
+      <div id="soc">We have put some soccer products such as top and bottom, shoes, 
+        and some accessories such as soccer ball, soccer net and more.</div>
+      <button type="button" onclick="pingpongForm()">Pingpong?</button><br>
+      <div id="pin">We have put some pingpong products such as top and bottom, shoes, 
+        and some accessories such as pingpong ball, pingpong net, pingpong racket and more.</div>
+    </div>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+    <footer>
+      <div class="footerpart">
+        <div class="footercontent">
+          <div class="leftmostrow">
+            <header>Shoer Sports</header>
+            <ul>
+              <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                alt="small shoer logo" width="228" height="63"></li>
+                <br><br>
+              <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Company Info</header>
+            <ul class="links">
+              <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li><a href="review.html">Review Form</a></li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Sports</header>
+            <ul class="links">
+              <li><a href="All_Basketball.html">Basketball</a></li>
+              <li><a href="All_Volleyball.html">Volleyball</a></li>
+              <li><a href="All_Soccer.html">Soccer</a></li>
+              <li><a href="All_Pingpong.html">Pingpong</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="iconpart">
+          <div class="iconrow">
+            <ul class="icon">
+              <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+              <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+              <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+            </ul>
+
+            <ul id="copyright">
+              <li>Shoer Sports © 2021 | All rights Reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+      }
+
+      /* my code */
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      function basketballForm() {
+        var a = document.getElementById("bas");
+        if (a.style.display === "none") {
+          a.style.display = "block";
+          a.style.width = "max-content";
+          a.style.marginBottom = "10px";
+          a.style.width = "auto";
+        }
+        else {a.style.display = "none";}
+      }
+
+      function volleyballForm() {
+        var b = document.getElementById("vol");
+        if (b.style.display === "none") {
+          b.style.display = "block";
+          b.style.width = "max-content";
+          b.style.marginBottom = "10px";
+          b.style.width = "auto";
+        }
+        else {b.style.display = "none";}
+      }
+
+      function soccerForm() {
+        var c = document.getElementById("soc");
+        if (c.style.display === "none") {
+          c.style.display = "block";
+          c.style.width = "max-content";
+          c.style.marginBottom = "10px";
+          c.style.width = "auto";
+        }
+        else {c.style.display = "none";}
+      }
+
+      function pingpongForm() {
+        var d = document.getElementById("pin");
+        if (d.style.display === "none") {
+          d.style.display = "block";
+          d.style.width = "max-content";
+          d.style.marginBottom = "10px";
+          d.style.width = "auto";
+        }
+        else {d.style.display = "none";}
+      }
+      </script>
+  </div>
+</body>
+</html>

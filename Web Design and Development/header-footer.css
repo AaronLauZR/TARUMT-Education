@@ -1,0 +1,251 @@
+*{
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background-image: url("image/background.jpg");
+  background-size: cover;
+  margin: 0;
+}
+
+#wrapper {
+  max-width: 1920px;
+  min-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.side_by_side li, .side_by_side li a{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.side_by_side li a:hover{
+  text-decoration: underline;
+}
+
+.side_by_side{
+  display: flex;
+}
+
+/* header logo and name */
+#header_logo {
+  padding-top: 20px;
+  margin-top: 10px;
+  margin-right: 0px;
+  padding-left: 0px;
+}
+
+.img_border{
+  border: 5px black solid;
+}
+
+#header_name {
+  padding-left: 10%;
+  font-size: 2em;
+  margin-right: auto;
+}
+
+/* ------- navigation bar start ------ */
+nav{
+  top: 0px; /* to adjust the whole black nav bar */
+  z-index: 99;
+  width: 100%;
+  background: #363535;
+  border-top: skyblue 6px solid;
+}
+
+nav .nav-bar{
+  position: relative;
+  padding: 10px 30px 10px 300px ;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar .nav-links {
+  display: inline-flex;
+}
+
+.nav-links li{
+  list-style: none;
+}
+
+.nav-links li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 40px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover{
+  background: #575757;
+}
+
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px; /* to adjust the box position */
+  opacity: 1; 
+  visibility: visible;
+} 
+
+.mega-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99;
+}
+
+.mega-box .content{
+  background: #242526;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.mega-box .content .row{
+  width: calc(30% - 100px); /*each part width*/
+  line-height: 45px;
+}
+
+.content .row header{
+  padding-left: 70px; /* adjust here to move whole part of header */
+} 
+
+.content .row .mega-links{
+  margin-left: -21px; /* adjust here to move whole part of mega-links */
+  border-left: 1px solid rgba(255,255,255,0.09);
+}
+
+.row .mega-links li{
+  padding: 0 20px;
+}
+
+.row .mega-links li a {
+  padding: 0px;
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 17px;
+  display: block;
+}
+
+.row .mega-links li a:hover{
+  color: #f2f2f2;
+} 
+
+input[type=text] {
+  padding: 8px;
+  width: 280px;
+  font-size: 17px;
+}
+
+form button[type=submit] {
+  margin-top: -0.5px;
+  margin-bottom: -0.5px;
+  background: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #ccc;
+}
+/* ------ navigation bar end ----- */
+
+
+/* footer start*/
+
+.footerpart,
+.footerpart .footercontent, .footerpart .iconpart{
+  background: #292929;
+  padding: 30px 0px 10px 0px;
+  display: flex;
+  width: 100%;
+  height: 270px;
+}
+
+.footerpart .footercontent .leftmostrow{
+  padding-right: 20px;
+  margin-right: 20px;
+}
+
+.footercontent .leftmostrow header {
+  color: #f2f2f2;
+  padding-left: 42px; /* adjust here to move whole part of header */
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.footercontent .leftmostrow  {
+  border-right: 1px solid grey;
+}
+
+.leftmostrow ul li {
+  list-style-type: none;
+  color: #d9d9d9;
+  font-size: 17px;
+}
+
+/* contentrow */
+.footerpart .contentrow {
+  margin-left: 10px;
+  line-height: 45px;
+  min-width: 170px;
+}
+
+.contentrow header {
+  padding-left: 40px; /* adjust here to move whole part of header */
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.contentrow .links li {
+  list-style-type: none;
+
+  font-size: 17px;
+  display: block;
+}
+
+.contentrow .links li a{
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+.contentrow .links li a:hover{
+  color: #f2f2f2;
+}
+
+/* iconpart */
+
+.iconrow .icon{
+  margin-left: 250px;
+  list-style-type: none;
+  display: flex;
+}
+
+.iconrow .icon li {
+  padding-right: 50px;
+}
+
+.iconrow #copyright {
+  list-style-type: none;
+  text-decoration: none;
+  color: #d9d9d9;
+  font-size: 17px;
+  margin-left: 250px;
+  padding-top: 80px;
+}

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoer</title>
+    <link rel="shortcut icon" href="image/icon_shoerlogo.ico?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="header-footer.css"/>
+    <link rel="stylesheet" href="contentstyle.css"/>
+    <link rel="stylesheet" href="promotion.css">
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <ul class="side_by_side">
+        <li id="header_logo" >
+          <a href="index.html">
+            <img class="img_border" src="image/shoerlogo.jpeg" alt="This is a Shoer Logo" height="95px" width="388px">   
+          </a>
+        </li>
+        <li id="header_name"><h1>Shoer Sports</h1></li>
+        <li style="padding: 5px 15px;" class="new-element"></li>
+        <li style="padding: 5px 15px;">
+          <a href="ContactUs.html">Contact Us</a>
+        </li> 
+        <li style="padding: 5px 15px;" class="old-element">
+          <a href="login.html">Login</a>
+        </li>
+        <li style="padding: 5px 15px;">
+          <a href="register.html">Sign Up</a>
+        </li>
+
+      </ul>
+      
+      <script>
+      let formData = localStorage.getItem('formData');
+      if( formData ) {
+        let storedNames = JSON.parse(localStorage.getItem("names"));
+        let displayName = document.querySelector('.new-element');
+        displayName.innerHTML += 
+        `<li class="new-element">
+          Hi, ${storedNames}
+        </li>`;
+        const listItem = document.querySelector("li:nth-child(5)");
+        const newItem = document.createElement('li');
+        newItem.innerHTML = '<li style="padding: 5px 15px"><a href="login.html">Log Out</a></li>';
+        listItem.parentNode.replaceChild(newItem, listItem);
+      }
+      </script>
+    </header>
+  
+    <!-- navigation bar -->
+    <nav>
+      <div class="nav-bar">
+        <ul class="nav-links">
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li>
+            <a href="#">All Products</a>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <header><a href="All_Basketball.html">Basketball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Basketball_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Basketball_Shoes.html">Shoes</a></li>
+                    <li><a href="Basketball_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Volleyball.html">Volleyball</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Volleyball_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Volleyball_Shoes.html">Shoes</a></li>
+                    <li><a href="Volleyball_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Soccer.html">Soccer</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Soccer_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Soccer_Shoes.html">Shoes</a></li>
+                    <li><a href="Soccer_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header><a href="All_Pingpong.html">Pingpong</a></header>
+                  <ul class="mega-links">
+                    <li><a href="Pingpong_T_B.html">Top and Bottom</a></li>
+                    <li><a href="Pingpong_Shoes.html">Shoes</a></li>
+                    <li><a href="Pingpong_A.html">Accessories</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li><a href="promotion.html">Promotion</a></li>
+          <li class="cart">
+            <a href="cart.html">
+                  <ion-icon name="basket"></ion-icon>Cart(<span>0</span>)
+            </a>
+         </li>               
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- promotion -->
+    <main class="background">
+      <br><br><br><br>
+      <div id="promotion" style="border: 5px solid black;">
+        <div class="word">
+          <h2>Happy 1st Anniversary Deal</h2>
+          <p>It is Today!! You only left.... until 12am<section id="timer"></section><br>
+            <i>Hover & Cick</i> the button for more detail! 
+          </p>
+        </div>
+        <div class="more">
+          <button class="information" onClick="myFunction()">
+            MORE INFORMATION
+          </button>
+        </div>  
+      </div>
+      <div id="panel">
+        <div class="card">
+          <img src="soccer_image/soccer_clothes1.jpg" alt="Manchester United Tee" style="width:100%">
+          <h1>Manchester United Tee</h1>
+          <p class="price">RM 129 <sub id="oriprice">RM139</sub></p>
+          <p>Size available for S/M/L/XL. Color available red/blue/black. Suitable for man adult.
+            Last long almost 3 years.
+          </p>
+          <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        <div class="card">
+          <img src="image/bb_shoes/bbshoe_1.jpg" alt="2019 Flash Men's Basketball Shoes" style="width:100%">
+          <h1>2019 Flash Men's Basketball Shoes</h1>
+          <p class="price">RM 430<sub id="oriprice">RM440</sub></p>
+          <p>P-MOTIVE bounce midsole, comfortable cushioning. Rubber sole with fine lines for 
+            strong grip and wear-resistant</p>
+          <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        <div class="card">
+                <img src="image/vol_acce/volleyball_net2.png" alt="Portable Volleyball Sets" style="width:100%">
+                <h1>Portable Volleyball Sets</h1>
+                <p class="price">RM 190<sub id="oriprice">RM200</sub></p>
+                <p>Portable regulation or beach volleyball sets. Feature FIVB regulation volleyball nets 
+                  (28ft or 32ft)</p>
+                <p><button class="add-cart">Add to cart</button></p>
+            </div>
+        </div>
+
+        <script>
+          function myFunction(){
+              var x = document.getElementById("panel");
+              if(x.style.maxHeight){
+                  x.style.maxHeight = null;
+              }
+              else{
+                  x.style.maxHeight = x.scrollHeight + "px";
+              }
+          }
+      </script>
+      <script>
+        var p = document.getElementById("timer");
+        setInterval(function(){
+          var today = new Date();
+          var tomorrow = new Date();
+          tomorrow.setHours(24,0,0,0);
+
+          var calculation = (tomorrow.getTime()/1000) - (today.getTime()/1000);
+          var calHours = Math.floor(calculation/(60*60));
+          calculation = calculation - (calHours * 60 * 60);
+
+          var calMinutes = Math.floor(calculation/60);
+          calculation = calculation - (calMinutes * 60);
+
+          var calSeconds = Math.floor(calculation);
+          
+          var result = ((calHours < 10)?"0" + calHours: calHours);
+          result += ":" + ((calMinutes<10)?"0" + calMinutes: calMinutes);
+          result += ":" + ((calSeconds < 10)?"0" + calSeconds : calSeconds);
+          p.innerHTML = result;
+
+        },1000);
+        var today = new Date();
+      </script>
+      <!-- second promotion -->
+        <div id="promotion" style="border: 5px solid black; ">
+          <div class="word2" >
+              <h2>Preapre for 1010 Deal</h2>
+
+          <section id="countdown1"></section>
+              <p>  
+              <i>Hover & Cick</i> the button for more detail! </p>
+          </div>
+          <div class="more">
+              <button class="information" onClick="myFunction2()">
+                  MORE INFORMATION
+              </button>
+          </div>
+      </div>
+      <div id="panel2">
+        <div class="card">
+            <img src="image/Pingpong_images/Pingpong_T_B2.jfif" alt="Ping Pong icon T-shirt" style="width:100%">
+            <h1>Ping Pong icon <br> T-shirt</h1>
+            <p class="price">RM 30 <sub id="oriprice">RM 40</sub></p>
+            <p>Size available is S/L/XL only. Color available will be white, black, lightgrey.
+              Suitable for both adult man and women.
+            </p>
+            <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        <div class="card">
+            <img src="image/bb_shoes/bbshoe_6.jpg" alt="Fallen Angel Series Sports Shoes" style="width:100%">
+            <h1 style="font-size: 1.9em; margin-top: 30px;">Fallen Angel Series Sports Shoes</h1>
+            <p class="price">RM 230 <sub id="oriprice">RM 240</sub></p>
+                <p>Size available is S/M/L/XL. Color available are white/black, black/white.
+                  Suitable for all adult man and woman.  
+                </p>
+            <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        <div class="card">
+            <img src="soccer_image/soccer_shoes2.jpg" alt="W283 Soccer Sports Shoes" style="width:100%; height: 300px;">
+            <h1>W283 Soccer Sports Shoes</h1>
+            <p class="price">RM 165 <sub id="oriprice">RM 175</sub></p>
+            <p>Size available is S/M/L/XL. Color available will be white/lightblue. 
+              It is suitable for adult man. 
+            </p>
+            <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        </div>
+      
+        <script>
+          function myFunction2(){
+              var x = document.getElementById("panel2");
+              if(x.style.maxHeight){
+                  x.style.maxHeight = null;
+              }
+              else{
+                  x.style.maxHeight = x.scrollHeight + "px";
+              }
+            }
+        </script>
+        <script>
+          var countdownDate = new Date("Oct 10, 2021 00:00:00").getTime();
+
+          var x = setInterval(function(){
+            var today = new Date().getTime();
+
+            var calculation = countdownDate - today;
+
+            var days = Math.floor(calculation/(1000 * 60 * 60 * 24));
+            var hours = Math.floor(((calculation)%(1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor(((calculation) % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor (((calculation) % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown1").innerHTML = days + " Days    " + hours + ":" + minutes + ":" + seconds ;
+
+            if (calculation < 0){
+              clearInterval (x);
+
+              document.getElementById("countdown1").innerHTML = "EXPIRED";
+            }
+          }, 1000);
+        </script>
+
+        <!-- third promotion -->
+        <div id="promotion" style="border: 5px solid black; ">
+          <div class="word3" >
+              <h2>Summer is Coming Deal</h2>
+              <section id="countdown2"></section>
+              <p>
+              <i>Hover & Cick</i> the button for more detail! </p>
+          </div>
+          <div class="more3">
+              <button class="information" onClick="myFunction3()">
+                  MORE INFORMATION
+              </button>
+          </div>
+        </div>
+        <div id="panel3">
+        <div class="card">
+            <img src="image/bb_shoes/bbshoe_3.jpg" alt="Mens Breathe Combat high-top basketball shoe" style="width:100%">
+            <h1 style="font-size: 1.4em; margin-top: 45px;">Mens Breathe Combat high-top basketball shoe</h1>
+            <p class="price">RM 290 <sub id="oriprice">RM 300</sub></p>
+            <p>Integrated woven embedded reflective wire, make the shoes more fashion. Lifting 
+              strap design, easy to put on and take off.
+            </p>
+
+            <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        <div class="card">
+            <img src="soccer_image/soccer_a2.jpg" alt="Essential football training flat markers 10-pack" style="width:100%">
+            <h1 style="font-size: 1.4em; margin-top: 45px;">Essential football training flat markers 10-pack</h1>
+            <p class="price">RM 19 <sub id="oriprice">RM 29</sub></p>
+            <p>Size available S/M. Color only available orange/ red. Quantity per 1 pack is 10. 
+              It almost last 6 years can be used. </p>
+            <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        <div class="card">
+            <img src="image/vol_topbottom/top1.png" alt="Graffiti Style Printing T-shirt Top Volleyball Sportswear" style="width:85% ;">
+            <h1 style="font-size: 1.2em;">Graffiti Style Printing T-shirt Top Volleyball Sportswear</h1>
+            <p class="price">RM 89 <sub id="oriprice">RM 99</sub></p>
+            <p>Made by polyester and spandex. Using Polyster, spandex fabric type. The neckline 
+              designed with turn-down collar.
+            </p>
+            <p><button class="add-cart">Add to cart</button></p>
+        </div>
+        </div>
+
+        <script>
+          function myFunction3(){
+              var x = document.getElementById("panel3");
+              if(x.style.maxHeight){
+                  x.style.maxHeight = null;
+              }
+              else{
+                  x.style.maxHeight = x.scrollHeight + "px";
+              }
+            }
+        </script>
+    
+      <script>
+        var countdownDate1 = new Date("Sep 27, 2021 00:00:00").getTime();
+
+        var x1 = setInterval(function(){
+        var today1 = new Date().getTime();
+
+        var calculation1 = countdownDate1 - today1;
+
+        var days1 = Math.floor(calculation1/(1000 * 60 * 60 * 24));
+        var hours1 = Math.floor(((calculation1)%(1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes1 = Math.floor(((calculation1) % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds1 = Math.floor (((calculation1) % (1000 * 60)) / 1000);
+        document.getElementById("countdown2").innerHTML = days1 + " Days    " + hours1 + ":" + minutes1 + ":" + seconds1 ;
+        if (calculation1 < 0){
+          clearInterval (x1);
+          document.getElementById("countdown2").innerHTML = "EXPIRED";
+        }}, 1000);
+      </script>
+        <br><br><br><br>
+        <!-- live chat-->
+    <button class="chat-button" onclick="openForm()">Customer Service</button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1 style="text-align: center;">Customer Service Centre</h1>
+
+        <b>Message</b>
+        <div>
+          <div>
+            Hi there, what can i help you? Please click the buttons below to display more details of it and 
+            click again to close it.
+          </div>
+          <button type="button" onclick="basketballForm()">Basketball?</button><br>
+          <div id="bas">We have put some basketball products such as top and bottom, shoes, 
+            and some accessories such as basketball, basketball net and more.</div>
+          <button type="button" onclick="volleyballForm()">Volleyball?</button><br>
+          <div id="vol">We have put some volleyball products such as top and bottom, shoes, 
+            and some accessories such as volleyball for begginer and pro, volleyball net and more.</div>
+          <button type="button" onclick="soccerForm()">Soccer?</button><br>
+          <div id="soc">We have put some soccer products such as top and bottom, shoes, 
+            and some accessories such as soccer ball, soccer net and more.</div>
+          <button type="button" onclick="pingpongForm()">Pingpong?</button><br>
+          <div id="pin">We have put some pingpong products such as top and bottom, shoes, 
+            and some accessories such as pingpong ball, pingpong net, pingpong racket and more.</div>
+        </div>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    </main>
+    <footer>
+      <div class="footerpart">
+        <div class="footercontent">
+          <div class="leftmostrow">
+            <header>Shoer Sports</header>
+            <ul>
+              <li><img class="img_border" src="image/shoerlogo.jpeg" 
+                alt="small shoer logo" width="228" height="63"></li>
+                <br><br>
+              <li>241, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Company Info</header>
+            <ul class="links">
+              <li><a href="AboutUs.html">About Us</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li><a href="review.html">Review Form</a></li>
+            </ul>
+          </div>
+          <div class="contentrow">
+            <header>Sports</header>
+            <ul class="links">
+              <li><a href="All_Basketball.html">Basketball</a></li>
+              <li><a href="All_Volleyball.html">Volleyball</a></li>
+              <li><a href="All_Soccer.html">Soccer</a></li>
+              <li><a href="All_Pingpong.html">Pingpong</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="iconpart">
+          <div class="iconrow">
+            <ul class="icon">
+              <li><a href="https://www.facebook.com/groups/2288450227952721"><img src="image/facebookicon.png" alt="fb" width="85%"></a></li>
+              <li><a href="https://www.instagram.com/shoer_sports_lighting/"><img src="image/instagramicon.png" alt="ig" width="85%"></a></li>
+              <li><a href="https://twitter.com/Shoer19737994"><img src="image/twittericon.png" alt="twitter" width="85%"></a></li>
+            </ul>
+
+            <ul id="copyright">
+              <li>Shoer Sports © 2021 | All rights Reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="cartPromo.js"></script>
+  <script src="cart1.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    /* live chat */
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      function basketballForm() {
+        var a = document.getElementById("bas");
+        if (a.style.display === "none") {
+          a.style.display = "block";
+          a.style.width = "max-content";
+          a.style.marginBottom = "10px";
+          a.style.width = "auto";
+        }
+        else {a.style.display = "none";}
+      }
+
+      function volleyballForm() {
+        var b = document.getElementById("vol");
+        if (b.style.display === "none") {
+          b.style.display = "block";
+          b.style.width = "max-content";
+          b.style.marginBottom = "10px";
+          b.style.width = "auto";
+        }
+        else {b.style.display = "none";}
+      }
+
+      function soccerForm() {
+        var c = document.getElementById("soc");
+        if (c.style.display === "none") {
+          c.style.display = "block";
+          c.style.width = "max-content";
+          c.style.marginBottom = "10px";
+          c.style.width = "auto";
+        }
+        else {c.style.display = "none";}
+      }
+
+      function pingpongForm() {
+        var d = document.getElementById("pin");
+        if (d.style.display === "none") {
+          d.style.display = "block";
+          d.style.width = "max-content";
+          d.style.marginBottom = "10px";
+          d.style.width = "auto";
+        }
+        else {d.style.display = "none";}
+      }
+  </script>
+</body>
+</html>

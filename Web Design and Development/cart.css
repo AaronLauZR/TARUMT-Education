@@ -1,0 +1,130 @@
+.cart_bg {
+    background-image: url("image/multi_background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container-products {
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.container-products ion-icon {
+    font-size: 25px;
+    color: rgb(255, 115, 1);
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.product-header {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgray;
+    margin: 0 auto;
+}
+
+.product-title {
+    width: 45%;
+}
+
+.price {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.quantity {
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.product {
+    width: 45%;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.product ion-icon {
+    cursor: pointer;
+    position: absolute;
+    margin-left: 500px;
+    display: inline-block;
+}
+
+.products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products img {
+    width: 100px;
+}
+
+.sm-hide {
+    padding-left: 0;
+}
+
+.basketTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0;
+    margin-left: -48px;
+}
+
+.basketTotalTitle {
+    width: 30%;
+}
+
+.basketTotal {
+    width: 10%;
+}
+
+@media(max-width: 500px) {
+    .sm-hide {
+        display: none;
+    }
+
+    .products,
+    .product-header {
+        justify-content: center;
+    }
+
+    .basketTotalContainer {
+        padding-right: 8%;
+    }
+}
+
+.submit{
+    margin-left: 1100px;
+    margin-top: 40px;
+    border: none;
+    height: 40px;
+    width: 150px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 35%;
+    text-align: right;
+    box-shadow: 5px 5px grey;
+}
+.submit:active{
+    background-color: #186dec;
+    box-shadow: 10 10px #666;
+    transform:  translateX(5px);
+    transition: 0.1s;
+}
