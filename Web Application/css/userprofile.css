@@ -1,0 +1,147 @@
+﻿body {
+    font-family: Montserrat, Manrope, BrutalTypeBold, sans-serif;
+    background-image: url('../img/bg-image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.maintitle {
+    font-size: 35px;
+    margin-left: 50px;
+    font-weight: 300;
+    color: #9F76AE
+}
+
+.subtitle {
+    font-size: 23px;
+    margin-left: 50px;
+    font-weight: 300;
+    color: #F8F4FA;
+}
+
+.des {
+    color: rgba(20, 20, 20, 0.72);
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 50px;
+    color: #F8F4FA;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 30px;
+    color: #F8F4FA;
+}
+
+.id {
+    font-weight: 400;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+}
+
+.passwordtext {
+    border-radius: 4px;
+    font-weight: 300;
+    background-color: white;
+    font-size: 17px;
+    width: 250px;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+}
+
+.profiledropdown {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: relative;
+    background-color: #9F76AE;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.errormessage {
+    font-size: 15px;
+    color: red;
+    margin-left: 35px; 
+}
+
+.errormessage2 {
+    font-size: 13px;
+    color: red;
+}
+
+.btnsubmit {
+    margin-left: 30px;
+    width: 440px;
+    height: 35px;
+    font-size: 17px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.border {
+    border-radius: 5px;
+    background-image: url('../img/border_bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px;
+    margin: 30px;
+    border:none;
+}
+
+.delsubtitle {
+    font-size: 28px;
+    margin-left: 50px;
+    font-weight: 400;
+    color: #F8F4FA;
+}
+
+.deldes {
+    color: #F8F4FA;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 50px;
+    margin-right: 800px;
+}
+
+.delbtn {
+    position: relative;
+    width: 220px;
+    height: 130px;
+    background-color: red;
+    color: white;
+    border: 3px solid darkred;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+table {
+    margin-left: 50px;
+    width: 90%;
+}
+
+td {
+    text-align: center;
+    padding: 20px 60px 20px 60px
+}
+
+.editbtn {
+    background-color: #9F76AE;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}

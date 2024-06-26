@@ -1,0 +1,119 @@
+﻿body {
+    font-family: Montserrat, Manrope, BrutalTypeBold, sans-serif;
+    background-color: #F8F4FA;
+}
+
+.logo {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+
+.logo2 {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+
+.ufo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    transform: scaleX(-1);
+}
+
+.ufo2 {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+}
+
+.topic {
+    margin-left: 280px;
+    width: 15%;
+    height: 5%;
+}
+
+.topic2 {
+    margin-left: 1000px;
+    width: 15%;
+    height: 5%;
+}
+
+#label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box {
+    width: 220px;
+    height: 40px;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.errormessage {
+    font-size: 13px;
+    color: red;
+}
+
+#passwordformat {
+    font-size: 13px;
+    color: #868686;
+    margin-top: -21px;
+}
+
+.submitbtn {
+    background-color: #9F76AE;
+    padding: 12px 48px;
+    border-radius: 12px;
+    font-size: 17px;
+    color: white;
+}
+
+.regiondropdown {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-size: 17px;
+    position: relative;
+    background-color: #9F76AE;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.forget {
+    font-size: 15px;
+    color: #640086;
+}
+
+.account {
+    position: relative;
+    margin-left: 260px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.account2 {
+    text-align: right;
+    position: relative;
+    margin-right: 280px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hyper {
+    color: #640086;
+    font-weight: bold;
+}
+

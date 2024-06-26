@@ -1,0 +1,119 @@
+﻿body {
+    font-family: Montserrat, Manrope, BrutalTypeBold, sans-serif;
+    background-image: url('../img/bg-image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.abtitle {
+    text-align: center;
+    text-shadow: 2px 2px gainsboro;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 50px;
+    color: #9F76AE;
+}
+
+.abtext {
+    text-align: justify;
+    margin: 0 auto 30px;
+    width: 1044px;
+    color: #F8F4FA;
+    font-size: 17.5px;
+    font-weight: 400;
+}
+
+article #about_title {
+    text-align: center;
+    text-shadow: 2px 2px gainsboro;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 50px;
+}
+
+#center {
+    text-align: justify;
+    margin: 0 auto 30px;
+    width: 1044px;
+    color: #4c4d4e;
+    font-size: 17.5px;
+    font-weight: 400;
+    font-family: Helvetica, sans-serif;
+}
+
+.about-card {
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    word-break: break-word;
+    text-align: center;
+    margin: 0 auto;
+    font-family: Helvetica, sans-serif;
+}
+
+.cardtopic {
+    width: 460px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px gainsboro;
+    color: #9F76AE;
+}
+
+#text2 {
+    width: 460px;
+    font-family: Helvetica, sans-serif;
+    color: #F8F4FA;
+    font-size: 17px;
+}
+
+#flex {
+    display: flex;
+    padding-top: 50px;
+}
+
+div#polaroid {
+    width: 83%;
+    align-self: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 40px 40px 40px 40px;
+}
+
+div#container {
+    text-align: center;
+    padding: 10px 20px;
+    text-shadow: 2px 2px gainsboro;
+}
+
+#ourteam {
+    margin-top: 80px;
+}
+
+.about_title {
+    font-family: 'Allura', cursive;
+    font-size: 45px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.abteamtitle {
+    font-family: 'Allura', cursive;
+    font-size: 45px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #9F76AE;
+    text-shadow: 2px 2px gainsboro;
+}
+
+table {
+    margin: 50px auto 50px auto;
+    width: 80%;
+    height: 30%;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+    color: #F8F4FA;
+}
