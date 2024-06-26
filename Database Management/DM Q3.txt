@@ -1,0 +1,35 @@
+SET LINESIZE 120
+SET PAGESIZE 100
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY';
+
+ACCEPT v_shelterID CHAR FORMAT 'A5' PROMPT 'Enter the Shelter ID (SH001-SH015): '
+ACCEPT v_gender CHAR FORMAT 'A1' PROMPT 'Enter the Victim Gender (M/F): '
+
+COLUMN shelter_ID     FORMAT A10 HEADING "Shelter ID"     JUSTIFY CENTER;
+COLUMN shelter_name   FORMAT A20 HEADING "Shelter Name"   JUSTIFY CENTER;
+COLUMN victim_ID      FORMAT A9  HEADING "Victim ID"      JUSTIFY CENTER;
+COLUMN victim_name    FORMAT A23 HEADING "Victim Name"    JUSTIFY CENTER;
+COLUMN date_of_birth  FORMAT A13 HEADING "Date of Birth"  JUSTIFY CENTER;
+COLUMN gender         FORMAT A6  HEADING "Gender"         JUSTIFY CENTER;
+COLUMN contact_number FORMAT A14 HEADING "Contact Number" JUSTIFY CENTER;  
+COLUMN condition      FORMAT A9  HEADING "Condition"      JUSTIFY CENTER;
+
+TTITLE CENTER 'Total Victim Gender &v_gender in Shelter &v_shelterID' -  
+SKIP 2 LEFT 'Page NO: ' FORMAT 999 SQL.PNO SKIP 2
+BREAK ON shelter_ID ON shelter_name ON victim_ID
+COMPUTE COUNT LABEL 'Total: ' OF victim_ID ON shelter_ID
+
+CREATE VIEW VictimGender AS
+SELECT SA.shelter_ID, S.shelter_name, SA.victim_ID, V.victim_name, V.date_of_birth, V.gender, V.contact_number, V.condition
+FROM victim V, shelter_allocation SA, shelter S
+WHERE S.shelter_ID = SA.shelter_ID AND V.victim_ID = SA.victim_ID AND SA.shelter_ID = '&v_shelterID' AND V.gender = '&v_gender'
+ORDER BY V.condition, SA.victim_ID;
+
+SELECT * FROM VictimGender;
+
+DROP VIEW VictimGender;
+
+CLEAR COLUMNS
+CLEAR BREAKS
+CLEAR COMPUTES
+TTITLE OFF 

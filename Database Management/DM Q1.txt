@@ -1,0 +1,27 @@
+SET LINESIZE 120
+SET PAGESIZE 100
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY';
+
+ACCEPT v_diseaseID CHAR FORMAT 'A5' PROMPT 'Enter the Disease ID (DE001-DE025): '
+
+COLUMN disease_ID       FORMAT A10 HEADING "Disease ID"       JUSTIFY CENTER;
+COLUMN disease_name     FORMAT A23 HEADING "Disease Name"     JUSTIFY CENTER;
+COLUMN victim_ID        FORMAT A9  HEADING "Victim ID"        JUSTIFY CENTER; 
+COLUMN victim_name      FORMAT A23 HEADING "Victim Name"      JUSTIFY CENTER;
+COLUMN contact_number   FORMAT A14 HEADING "Contact Number"   JUSTIFY CENTER;
+COLUMN examination_date FORMAT A16 HEADING "Examination Date" JUSTIFY CENTER;
+
+TTITLE CENTER 'Total Patient of Disease &v_diseaseID'- 
+SKIP 2 LEFT 'Page NO: ' FORMAT 999 SQL.PNO SKIP 2
+BREAK ON disease_ID ON disease_name ON victim_ID ON victim_name ON contact_number ON examination_date
+COMPUTE COUNT LABEL 'Total: ' OF victim_ID ON disease_ID
+
+SELECT D.disease_ID, D.disease_name, B.victim_ID, V.victim_name, V.contact_number, B.examination_date
+FROM body_examination B, disease D, victim V
+WHERE B.disease_ID = D.disease_ID AND D.disease_ID = '&v_diseaseID' AND B.victim_ID = V.victim_ID
+ORDER BY B.examination_date;
+
+CLEAR COLUMNS
+CLEAR BREAKS
+CLEAR COMPUTES
+TTITLE OFF

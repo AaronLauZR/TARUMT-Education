@@ -1,0 +1,34 @@
+SET LINESIZE 180
+SET PAGESIZE 120
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY';
+
+ACCEPT v_disasterID CHAR FORMAT 'A5' PROMPT 'Enter the Disaster ID (DS001-DS015): '
+ACCEPT v_shelterID CHAR FORMAT 'A5' PROMPT 'Enter the Shelter ID (SH001-SH015): '
+ACCEPT v_condition CHAR FORMAT 'A5' PROMPT 'Enter the Victim Condition (Alive/Dead): '
+
+COLUMN disaster_ID   FORMAT A11  HEADING "Disaster ID"   JUSTIFY CENTER;
+COLUMN disaster_type FORMAT A15  HEADING "Disaster Type" JUSTIFY CENTER;
+COLUMN date_occur    FORMAT DATE HEADING "Date Occur"    JUSTIFY CENTER;
+COLUMN city_occur    FORMAT A15  HEADING "City Occur"    JUSTIFY CENTER; 
+COLUMN shelter_ID    FORMAT A10  HEADING "Shelter ID"    JUSTIFY CENTER;
+COLUMN shelter_name  FORMAT A20  HEADING "Shelter Name"  JUSTIFY CENTER;
+COLUMN city          FORMAT A15  HEADING "City"          JUSTIFY CENTER;
+COLUMN victim_ID     FORMAT A9   HEADING "Victim ID"     JUSTIFY CENTER; 
+COLUMN victim_name   FORMAT A23  HEADING "Victim Name"   JUSTIFY CENTER;
+COLUMN condition     FORMAT A9   HEADING "Condition"     JUSTIFY CENTER;
+
+TTITLE CENTER 'Total &v_condition Victim Recorded in Shelter &v_shelterID caused by Disaster &v_disasterID' - 
+SKIP 2 LEFT 'Page NO: ' FORMAT 999 SQL.PNO SKIP 2
+BREAK ON disaster_ID ON disaster_type ON date_occur ON shelter_ID ON shelter_name ON city ON victim_ID ON victim_name ON condition
+COMPUTE COUNT LABEL 'Total: ' OF victim_ID ON disaster_ID
+
+SELECT D.disaster_ID, D.disaster_type, D.date_occur, S.shelter_ID, S.shelter_name, S.city, V.victim_ID, V.victim_name, V.condition
+FROM disaster D, shelter S, shelter_allocation SA, victim V
+WHERE S.shelter_ID = SA.shelter_ID AND SA.shelter_ID = '&v_shelterID' AND V.victim_ID = SA.victim_ID AND
+      D.disaster_ID = SA.disaster_ID AND SA.disaster_ID = '&v_disasterID' AND V.condition = '&v_condition'
+ORDER BY V.victim_ID;
+
+CLEAR COLUMNS
+CLEAR BREAKS
+CLEAR COMPUTES
+TTITLE OFF 
