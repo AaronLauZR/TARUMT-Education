@@ -1,4 +1,4 @@
-# Tunku Abdul Rahman University of Management and Technology (TARUMT) Education
+# Tunku Abdul Rahman University of Management and Technology (TARUMT) Assignments & Projects
 Y1S1
 - Problem Solving and Programming (C++)
 - Introduction to Computer Systems (Assembly Language)
